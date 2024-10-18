@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace LNB_Airlines
 {
-    public partial class Form1 : Form
+    public partial class Admin : Form
     {
-        public Form1()
+        public Admin()
         {
             InitializeComponent();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

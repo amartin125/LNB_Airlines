@@ -16,7 +16,7 @@ namespace LNB_Airlines
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new EmployeeDash());
         }
     }
 }
