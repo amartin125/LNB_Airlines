@@ -89,5 +89,10 @@ namespace LNB_Airlines
         {
 
         }
+
+        private void groupboxUpcoming_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

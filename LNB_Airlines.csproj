@@ -170,6 +170,11 @@
     <Compile Include="EmployeeDash.Designer.cs">
       <DependentUpon>EmployeeDash.cs</DependentUpon>
     </Compile>
+    <Compile Include="LNBrootDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LNBrootDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Admin.resx">
@@ -190,6 +195,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="LNBrootDataSet.xsc">
+      <DependentUpon>LNBrootDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LNBrootDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LNBrootDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LNBrootDataSet.xss">
+      <DependentUpon>LNBrootDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

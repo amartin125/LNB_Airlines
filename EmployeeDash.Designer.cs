@@ -66,9 +66,11 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(2, 0);
+            this.groupBox1.Location = new System.Drawing.Point(3, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1210, 24);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1613, 30);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LNB ";
@@ -82,9 +84,11 @@
             this.groupBox2.Controls.Add(this.groupboxRequests);
             this.groupBox2.Controls.Add(this.groupBreakdown);
             this.groupBox2.Controls.Add(this.groupAvailableNeed);
-            this.groupBox2.Location = new System.Drawing.Point(2, 67);
+            this.groupBox2.Location = new System.Drawing.Point(3, 84);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(789, 539);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(1052, 674);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -94,9 +98,11 @@
             this.groupBox6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox6.Controls.Add(this.groupboxUpcoming);
             this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Location = new System.Drawing.Point(402, 142);
+            this.groupBox6.Location = new System.Drawing.Point(536, 178);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(353, 230);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Size = new System.Drawing.Size(471, 288);
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             // 
@@ -104,29 +110,34 @@
             // 
             this.groupboxUpcoming.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupboxUpcoming.Controls.Add(this.label8);
-            this.groupboxUpcoming.Location = new System.Drawing.Point(6, 35);
+            this.groupboxUpcoming.Location = new System.Drawing.Point(8, 44);
+            this.groupboxUpcoming.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupboxUpcoming.Name = "groupboxUpcoming";
-            this.groupboxUpcoming.Size = new System.Drawing.Size(341, 175);
+            this.groupboxUpcoming.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupboxUpcoming.Size = new System.Drawing.Size(455, 219);
             this.groupboxUpcoming.TabIndex = 2;
             this.groupboxUpcoming.TabStop = false;
+            this.groupboxUpcoming.Enter += new System.EventHandler(this.groupboxUpcoming_Enter);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(76, 77);
+            this.label8.Location = new System.Drawing.Point(101, 96);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(141, 20);
+            this.label8.Size = new System.Drawing.Size(192, 25);
             this.label8.TabIndex = 1;
             this.label8.Text = "All upcoming shifts";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 12);
+            this.label5.Location = new System.Drawing.Point(8, 15);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 20);
+            this.label5.Size = new System.Drawing.Size(168, 25);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Upcoming Shift";
+            this.label5.Text = "Upcoming Shifts";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // groupBox5
@@ -134,18 +145,21 @@
             this.groupBox5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Controls.Add(this.groupboxStaffNeeds);
-            this.groupBox5.Location = new System.Drawing.Point(33, 142);
+            this.groupBox5.Location = new System.Drawing.Point(44, 178);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(353, 230);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Size = new System.Drawing.Size(471, 288);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 12);
+            this.label2.Location = new System.Drawing.Point(8, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 20);
+            this.label2.Size = new System.Drawing.Size(153, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Staffing Needs";
             // 
@@ -153,18 +167,21 @@
             // 
             this.groupboxStaffNeeds.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupboxStaffNeeds.Controls.Add(this.label7);
-            this.groupboxStaffNeeds.Location = new System.Drawing.Point(6, 35);
+            this.groupboxStaffNeeds.Location = new System.Drawing.Point(8, 44);
+            this.groupboxStaffNeeds.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupboxStaffNeeds.Name = "groupboxStaffNeeds";
-            this.groupboxStaffNeeds.Size = new System.Drawing.Size(341, 175);
+            this.groupboxStaffNeeds.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupboxStaffNeeds.Size = new System.Drawing.Size(455, 219);
             this.groupboxStaffNeeds.TabIndex = 2;
             this.groupboxStaffNeeds.TabStop = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 73);
+            this.label7.Location = new System.Drawing.Point(59, 91);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(187, 20);
+            this.label7.Size = new System.Drawing.Size(257, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "Shifts availabel to pick up";
             // 
@@ -173,27 +190,31 @@
             this.groupboxRequests.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupboxRequests.Controls.Add(this.label9);
             this.groupboxRequests.Controls.Add(this.label4);
-            this.groupboxRequests.Location = new System.Drawing.Point(33, 378);
+            this.groupboxRequests.Location = new System.Drawing.Point(44, 472);
+            this.groupboxRequests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupboxRequests.Name = "groupboxRequests";
-            this.groupboxRequests.Size = new System.Drawing.Size(722, 159);
+            this.groupboxRequests.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupboxRequests.Size = new System.Drawing.Size(963, 199);
             this.groupboxRequests.TabIndex = 8;
             this.groupboxRequests.TabStop = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(291, 69);
+            this.label9.Location = new System.Drawing.Point(388, 86);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(211, 20);
+            this.label9.Size = new System.Drawing.Size(288, 25);
             this.label9.TabIndex = 5;
             this.label9.Text = "approved and declined shifts";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 11);
+            this.label4.Location = new System.Drawing.Point(0, 14);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 20);
+            this.label4.Size = new System.Drawing.Size(168, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Leave Requests";
             // 
@@ -202,27 +223,31 @@
             this.groupBreakdown.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBreakdown.Controls.Add(this.label11);
             this.groupBreakdown.Controls.Add(this.label6);
-            this.groupBreakdown.Location = new System.Drawing.Point(402, 25);
+            this.groupBreakdown.Location = new System.Drawing.Point(536, 31);
+            this.groupBreakdown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBreakdown.Name = "groupBreakdown";
-            this.groupBreakdown.Size = new System.Drawing.Size(353, 111);
+            this.groupBreakdown.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBreakdown.Size = new System.Drawing.Size(471, 139);
             this.groupBreakdown.TabIndex = 4;
             this.groupBreakdown.TabStop = false;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(-4, 78);
+            this.label11.Location = new System.Drawing.Point(-5, 98);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(365, 20);
+            this.label11.Size = new System.Drawing.Size(497, 25);
             this.label11.TabIndex = 4;
             this.label11.Text = "pilots ground and everything else percentages off?";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 12);
+            this.label6.Location = new System.Drawing.Point(15, 15);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(178, 20);
+            this.label6.Size = new System.Drawing.Size(236, 25);
             this.label6.TabIndex = 3;
             this.label6.Text = "Department Breakdown";
             // 
@@ -231,44 +256,50 @@
             this.groupAvailableNeed.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupAvailableNeed.Controls.Add(this.label10);
             this.groupAvailableNeed.Controls.Add(this.label3);
-            this.groupAvailableNeed.Location = new System.Drawing.Point(33, 25);
+            this.groupAvailableNeed.Location = new System.Drawing.Point(44, 31);
+            this.groupAvailableNeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupAvailableNeed.Name = "groupAvailableNeed";
-            this.groupAvailableNeed.Size = new System.Drawing.Size(353, 111);
+            this.groupAvailableNeed.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupAvailableNeed.Size = new System.Drawing.Size(471, 139);
             this.groupAvailableNeed.TabIndex = 0;
             this.groupAvailableNeed.TabStop = false;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(106, 45);
+            this.label10.Location = new System.Drawing.Point(141, 56);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 20);
+            this.label10.Size = new System.Drawing.Size(81, 25);
             this.label10.TabIndex = 4;
             this.label10.Text = "IDK yet";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 12);
+            this.label3.Location = new System.Drawing.Point(8, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 20);
+            this.label3.Size = new System.Drawing.Size(165, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Available needs";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 29);
+            this.label1.Location = new System.Drawing.Point(67, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
+            this.label1.Size = new System.Drawing.Size(150, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Quick Actions:";
             // 
             // btnChatbot
             // 
-            this.btnChatbot.Location = new System.Drawing.Point(554, 29);
+            this.btnChatbot.Location = new System.Drawing.Point(739, 36);
+            this.btnChatbot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChatbot.Name = "btnChatbot";
-            this.btnChatbot.Size = new System.Drawing.Size(237, 32);
+            this.btnChatbot.Size = new System.Drawing.Size(316, 40);
             this.btnChatbot.TabIndex = 3;
             this.btnChatbot.Text = "Shift Managment Chatbot";
             this.btnChatbot.UseVisualStyleBackColor = true;
@@ -276,9 +307,10 @@
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(861, 155);
+            this.btnTest.Location = new System.Drawing.Point(1148, 194);
+            this.btnTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(99, 115);
+            this.btnTest.Size = new System.Drawing.Size(132, 144);
             this.btnTest.TabIndex = 4;
             this.btnTest.Text = "test";
             this.btnTest.UseVisualStyleBackColor = true;
@@ -286,9 +318,10 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(861, 317);
+            this.btnClear.Location = new System.Drawing.Point(1148, 396);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(99, 115);
+            this.btnClear.Size = new System.Drawing.Size(132, 144);
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -296,15 +329,16 @@
             // 
             // EmployeeDash
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1055, 625);
+            this.ClientSize = new System.Drawing.Size(1407, 781);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnChatbot);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EmployeeDash";
             this.Text = "Form1";
             this.groupBox2.ResumeLayout(false);
