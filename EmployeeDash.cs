@@ -94,5 +94,12 @@ namespace LNB_Airlines
         {
 
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Admin admin = new Admin();
+            admin.Show();
+        }
     }
 }
