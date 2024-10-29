@@ -21,5 +21,40 @@ namespace LNB_Airlines
         {
             this.Close();
         }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChatbot_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
