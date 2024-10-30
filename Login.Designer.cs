@@ -1,4 +1,4 @@
-﻿namespace LNB_Airlines_Login
+﻿namespace LNB_Airlines
 {
     partial class Login
     {
