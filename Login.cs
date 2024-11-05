@@ -75,75 +75,77 @@ namespace  LNB_Airlines
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            // Temporary until everyone can connect their database
-            if (!rdEmployee.Checked && !rdAdmin.Checked)
-            {
-                MessageBox.Show("Please select a valid role type."); // Debug message
-                return;
-            }
-            if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
-            {
-                Admin adminForm = new Admin(); // Instantiate the AdminForm
-                adminForm.Show(); // Show the AdminFor
-                this.Hide();
-
-            }
-            else if (txtUsername.Text == "emp" && txtPassword.Text == "emp")
-            {
-                EmployeeDash emp = new EmployeeDash(); // Instantiate the AdminForm
-                emp.Show(); 
-                this.Hide();
-
-            }
-            else
-            {
-                MessageBox.Show("Sorry we don't have your username or password. " +
-                                "Please contact your supervisor.");
-            }
-            
-
-
-
-
-            // Step 2: Determine the selected role
-            string userSelectedRole = rdEmployee.Checked ? "Employee" : "Admin";
-            //MessageBox.Show($"Role selected: {userSelectedRole}"); // Debug message
-
-            // Step 3: Validate the user credentials using the ValidateUser method
-
-
-            //bool isValidUser = ValidateUser(txtUsername.Text, txtPassword.Text, userSelectedRole);
-
-
-            //MessageBox.Show($"User valid: {isValidUser}"); // Debug message
-
-            //if (isValidUser)
+            //// Temporary until everyone can connect their database
+            //if (!rdEmployee.Checked && !rdAdmin.Checked)
             //{
-            //    // Step 4: User role is correct, proceed based on the role
-            //    if (userSelectedRole == "Admin")
-            //    {
-            //        //MessageBox.Show("Navigating to Admin Form"); // Debug message
-            //        Admin adminForm = new Admin(); // Instantiate the AdminForm
-            //        adminForm.Show(); // Show the AdminForm
-            //        this.Hide(); // Hide the login form
-            //    }
-            //    else if (userSelectedRole == "Employee")
-            //    {
-            //        //MessageBox.Show("Navigating to Employee Form"); // Debug message
-            //        EmployeeDash employeeForm = new EmployeeDash(); // Instantiate the EmployeeForm
-            //        employeeForm.Show(); // Show the EmployeeForm
-            //        this.Hide(); // Hide the login form
-            //    }
+            //    MessageBox.Show("Please select a valid role type."); // Debug message
+            //    return;
+            //}
+            //if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
+            //{
+            //    Admin adminForm = new Admin(); // Instantiate the AdminForm
+            //    adminForm.Show(); // Show the AdminFor
+            //    this.Hide();
+
+            //}
+            //else if (txtUsername.Text == "emp" && txtPassword.Text == "emp")
+            //{
+            //    EmployeeDash emp = new EmployeeDash(); // Instantiate the AdminForm
+            //    emp.Show(); 
+            //    this.Hide();
+
             //}
             //else
             //{
-            //    // Step 5: Handle incorrect username or password
-            //    MessageBox.Show("Incorrect username or password!"); // Debug message
-            //    txtPassword.Clear();
-            //    txtUsername.Clear();
-            //    txtUsername.Focus();
+            //    MessageBox.Show("Sorry we don't have your username or password. " +
+            //                    "Please contact your supervisor.");
             //}
-        }
+
+
+
+           
+                // Ensure a role is selected
+                if (!rdEmployee.Checked && !rdAdmin.Checked)
+                {
+                    MessageBox.Show("Please select a valid role type.");
+                    return;
+                }
+
+                // Determine selected role
+                string userSelectedRole = rdEmployee.Checked ? "Employee" : "Admin";
+
+                // Validate user credentials
+                bool isValidUser = DatabaseConnection.ValidateUser(txtUsername.Text, txtPassword.Text, userSelectedRole);
+
+                if (isValidUser)
+                {
+                    // Navigate based on role
+                    if (userSelectedRole == "Admin")
+                    {
+                        Admin adminForm = new Admin();
+                        adminForm.Show();
+                        this.Hide();
+                    }
+                    else if (userSelectedRole == "Employee")
+                    {
+                        EmployeeDash emp = new EmployeeDash();
+                        emp.Show();
+                        this.Hide();
+                    }
+                }
+                else
+                {
+                    // Show error if credentials are incorrect
+                    MessageBox.Show("Incorrect username or password! Please try again.");
+                    txtPassword.Clear();
+                    txtUsername.Clear();
+                    txtUsername.Focus();
+                }
+            }
+
+
+
+        
 
         private void rdAdmin_CheckedChanged(object sender, EventArgs e)
         {

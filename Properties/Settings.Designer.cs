@@ -34,5 +34,16 @@ namespace LNB_Airlines.Properties {
                 return ((string)(this["LNBrootConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JAKESLAPTOP\\SQLEXPRESS01;Initial Catalog=LNBroot;Integrated Security=" +
+            "True;TrustServerCertificate=True")]
+        public string LNBrootConnectionString1 {
+            get {
+                return ((string)(this["LNBrootConnectionString1"]));
+            }
+        }
     }
 }

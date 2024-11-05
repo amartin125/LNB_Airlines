@@ -164,6 +164,7 @@
     <Compile Include="Chatbot.Designer.cs">
       <DependentUpon>Chatbot.cs</DependentUpon>
     </Compile>
+    <Compile Include="CallDatabase.cs" />
     <Compile Include="EmployeeDash.cs">
       <SubType>Form</SubType>
     </Compile>
