@@ -97,7 +97,8 @@ namespace  LNB_Airlines
             }
             else
             {
-                MessageBox.Show("Sorry we don't have your username or password");
+                MessageBox.Show("Sorry we don't have your username or password. " +
+                                "Please contact your supervisor.");
             }
             
 
