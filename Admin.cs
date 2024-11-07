@@ -24,6 +24,8 @@ namespace LNB_Airlines
 
         private void Admin_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'lNBrootDataSet.LeaveRequests' table. You can move, or remove it, as needed.
+            this.leaveRequestsTableAdapter.Fill(this.lNBrootDataSet.LeaveRequests);
 
         }
 
@@ -39,7 +41,8 @@ namespace LNB_Airlines
 
         private void btnChatbot_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Chatbot emp = new Chatbot();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -61,6 +64,26 @@ namespace LNB_Airlines
         {
              this.Hide();
              EmployeeDash emp = new EmployeeDash();
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnShiftApprove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtReason_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
