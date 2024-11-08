@@ -17,7 +17,10 @@ namespace LNB_Airlines
             List<string> connectionStrings = new List<string>
             {
                 "Server=JAKESLAPTOP\\SQLEXPRESS01;Database=LNBroot;Integrated Security=True;",
-                "Server=(LocalDb)\\LNBroot;Database=LNBairlines;Integrated Security=True;"
+                "Server=(LocalDb)\\LNBroot;Database=LNBairlines;Integrated Security=True;",
+                //Andrews login
+                "Server=DESKTOP-VEH3C8M\\SQLEXPRESS01;Database=Test;Integrated Security=True;"
+
 
             };
 

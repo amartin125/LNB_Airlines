@@ -25,7 +25,7 @@ namespace LNB_Airlines
         private void Admin_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'lNBrootDataSet.LeaveRequests' table. You can move, or remove it, as needed.
-            this.leaveRequestsTableAdapter.Fill(this.lNBrootDataSet.LeaveRequests);
+     
 
         }
 
