@@ -152,17 +152,77 @@ namespace LNB_Airlines
         {
             using (SqlConnection connection = ConnectToDatabase())
             {
-                string query = "UPDATE ShiftPickups SET pickup_status = @Status, reason = @Reason, updated_at = GETDATE() WHERE pickup_id = @PickupId";
-                using (SqlCommand command = new SqlCommand(query, connection))
+                SqlTransaction transaction = connection.BeginTransaction();
+
+                try
                 {
-                    command.Parameters.AddWithValue("@Status", status);
-                    command.Parameters.AddWithValue("@Reason", reason);
-                    command.Parameters.AddWithValue("@PickupId", pickupId);
-                    command.ExecuteNonQuery();
+                    // Update ShiftPickups table with status and reason
+                    string updatePickupQuery = "UPDATE ShiftPickups SET pickup_status = @Status, reason = @Reason, updated_at = GETDATE() WHERE pickup_id = @PickupId";
+                    using (SqlCommand command = new SqlCommand(updatePickupQuery, connection, transaction))
+                    {
+                        command.Parameters.AddWithValue("@Status", status);
+                        command.Parameters.AddWithValue("@Reason", reason);
+                        command.Parameters.AddWithValue("@PickupId", pickupId);
+                        command.ExecuteNonQuery();
+                    }
+
+                    // Retrieve shift_id and employee_id for the notification and analytics updates
+                    string getShiftAndEmployeeQuery = "SELECT shift_id, employee_id FROM ShiftPickups WHERE pickup_id = @PickupId";
+                    int shiftId, employeeId;
+                    using (SqlCommand command = new SqlCommand(getShiftAndEmployeeQuery, connection, transaction))
+                    {
+                        command.Parameters.AddWithValue("@PickupId", pickupId);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            reader.Read();
+                            shiftId = reader.GetInt32(0);
+                            employeeId = reader.GetInt32(1);
+                        }
+                    }
+
+                    // If approved, decrement available_slots in Shifts and increment analytics
+                    if (status == "approved")
+                    {
+                        string decrementSlotsQuery = "UPDATE Shifts SET available_slots = available_slots - 1 WHERE shift_id = @ShiftId AND available_slots > 0";
+                        using (SqlCommand command = new SqlCommand(decrementSlotsQuery, connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("@ShiftId", shiftId);
+                            command.ExecuteNonQuery();
+                        }
+
+                        // Update analytics to increment total_shifts_picked for employee's role
+                        string updateAnalyticsQuery = @"
+                    UPDATE Analytics SET total_shifts_picked = total_shifts_picked + 1
+                    WHERE role_id = (SELECT role_id FROM Employees WHERE employee_id = @EmployeeId)";
+                        using (SqlCommand command = new SqlCommand(updateAnalyticsQuery, connection, transaction))
+                        {
+                            command.Parameters.AddWithValue("@EmployeeId", employeeId);
+                            command.ExecuteNonQuery();
+                        }
+                    }
+
+                    // Send notification to the employee about the approval or denial
+                    string notificationMessage = status == "approved" ? "Your shift pickup has been approved." : "Your shift pickup has been denied.";
+                    string insertNotificationQuery = "INSERT INTO Notifications (employee_id, message, is_read) VALUES (@EmployeeId, @Message, 0)";
+                    using (SqlCommand command = new SqlCommand(insertNotificationQuery, connection, transaction))
+                    {
+                        command.Parameters.AddWithValue("@EmployeeId", employeeId);
+                        command.Parameters.AddWithValue("@Message", notificationMessage);
+                        command.ExecuteNonQuery();
+                    }
+
+                    // Commit transaction if all commands succeed
+                    transaction.Commit();
+                    MessageBox.Show("Shift pickup status updated and all related tables updated successfully.");
+                }
+                catch (Exception ex)
+                {
+                    // Rollback transaction in case of an error
+                    transaction.Rollback();
+                    MessageBox.Show($"Error updating shift pickup status: {ex.Message}");
                 }
             }
         }
-
         // Method to update shift status and reason
         public static void UpdateShiftStatus(int shiftId, string status, string reason)
         {
@@ -179,4 +239,8 @@ namespace LNB_Airlines
             }
         }
     }
+
+    
 }
+    
+
