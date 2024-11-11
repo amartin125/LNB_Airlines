@@ -31,48 +31,75 @@
             this.components = new System.ComponentModel.Container();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnTest = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnShiftApprove = new System.Windows.Forms.Button();
             this.btnLeave = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.leaveidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reasonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataLeaveReq = new System.Windows.Forms.DataGridView();
             this.leaveRequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lNBrootDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lNBrootDataSet = new LNB_Airlines.LNBrootDataSet();
             this.txtReason = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnPickups = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVacant = new System.Windows.Forms.Button();
             this.btnMain = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblShiftReq = new System.Windows.Forms.Label();
             this.lblLeave = new System.Windows.Forms.Label();
             this.LblVacant = new System.Windows.Forms.Label();
-            this.leaveRequestsTableAdapter = new LNB_Airlines.LNBrootDataSetTableAdapters.LeaveRequestsTableAdapter();
             this.PowerBIBTN = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lNBrootDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lNBrootDataSet = new LNB_Airlines.LNBrootDataSet();
+            this.leaveRequestsTableAdapter = new LNB_Airlines.LNBrootDataSetTableAdapters.LeaveRequestsTableAdapter();
+            this.usersTableAdapter = new LNB_Airlines.LNBrootDataSetTableAdapters.UsersTableAdapter();
+            this.testDataSet3 = new LNB_Airlines.TestDataSet3();
+            this.leaveRequestsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.leaveRequestsTableAdapter1 = new LNB_Airlines.TestDataSet3TableAdapters.LeaveRequestsTableAdapter();
+            this.dataShiftPick = new System.Windows.Forms.DataGridView();
+            this.testDataSet4 = new LNB_Airlines.TestDataSet4();
+            this.shiftPickupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shiftPickupsTableAdapter = new LNB_Airlines.TestDataSet4TableAdapters.ShiftPickupsTableAdapter();
+            this.dataVacant = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataPowerBI = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shift_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employee_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pickup_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updated_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testDataSet7 = new LNB_Airlines.TestDataSet7();
+            this.shiftPickupsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.shiftPickupsTableAdapter1 = new LNB_Airlines.TestDataSet7TableAdapters.ShiftPickupsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dataLeaveReq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lNBrootDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lNBrootDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataShiftPick)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shiftPickupsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataVacant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPowerBI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shiftPickupsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Red;
-            this.btnExit.Location = new System.Drawing.Point(1266, 765);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Location = new System.Drawing.Point(950, 612);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(118, 69);
+            this.btnExit.Size = new System.Drawing.Size(88, 55);
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -80,25 +107,13 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(1138, 469);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Location = new System.Drawing.Point(854, 375);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(132, 144);
+            this.btnClear.Size = new System.Drawing.Size(99, 115);
             this.btnClear.TabIndex = 11;
             this.btnClear.Text = "clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(1146, 196);
-            this.btnTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(132, 144);
-            this.btnTest.TabIndex = 10;
-            this.btnTest.Text = "test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // contextMenuStrip1
             // 
@@ -110,10 +125,9 @@
             // 
             this.btnShiftApprove.BackColor = System.Drawing.Color.LimeGreen;
             this.btnShiftApprove.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnShiftApprove.Location = new System.Drawing.Point(16, 740);
-            this.btnShiftApprove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShiftApprove.Location = new System.Drawing.Point(12, 592);
             this.btnShiftApprove.Name = "btnShiftApprove";
-            this.btnShiftApprove.Size = new System.Drawing.Size(118, 44);
+            this.btnShiftApprove.Size = new System.Drawing.Size(88, 35);
             this.btnShiftApprove.TabIndex = 13;
             this.btnShiftApprove.Text = "Approve";
             this.btnShiftApprove.UseVisualStyleBackColor = false;
@@ -122,127 +136,47 @@
             // btnLeave
             // 
             this.btnLeave.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnLeave.Location = new System.Drawing.Point(16, 196);
-            this.btnLeave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLeave.Location = new System.Drawing.Point(12, 157);
             this.btnLeave.Name = "btnLeave";
-            this.btnLeave.Size = new System.Drawing.Size(234, 60);
+            this.btnLeave.Size = new System.Drawing.Size(176, 48);
             this.btnLeave.TabIndex = 12;
             this.btnLeave.Text = "Leave Requests";
             this.btnLeave.UseVisualStyleBackColor = true;
+            this.btnLeave.Click += new System.EventHandler(this.btnLeave_Click);
             // 
-            // dataGridView1
+            // dataLeaveReq
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.leaveidDataGridViewTextBoxColumn,
+            this.dataLeaveReq.AutoGenerateColumns = false;
+            this.dataLeaveReq.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dataLeaveReq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataLeaveReq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.employeeidDataGridViewTextBoxColumn,
-            this.startdateDataGridViewTextBoxColumn,
-            this.enddateDataGridViewTextBoxColumn,
-            this.reasonDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.createdatDataGridViewTextBoxColumn,
-            this.updatedatDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.leaveRequestsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 363);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(930, 365);
-            this.dataGridView1.TabIndex = 12;
-            // 
-            // leaveidDataGridViewTextBoxColumn
-            // 
-            this.leaveidDataGridViewTextBoxColumn.DataPropertyName = "leave_id";
-            this.leaveidDataGridViewTextBoxColumn.HeaderText = "leave_id";
-            this.leaveidDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.leaveidDataGridViewTextBoxColumn.Name = "leaveidDataGridViewTextBoxColumn";
-            this.leaveidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.leaveidDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // employeeidDataGridViewTextBoxColumn
-            // 
-            this.employeeidDataGridViewTextBoxColumn.DataPropertyName = "employee_id";
-            this.employeeidDataGridViewTextBoxColumn.HeaderText = "employee_id";
-            this.employeeidDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.employeeidDataGridViewTextBoxColumn.Name = "employeeidDataGridViewTextBoxColumn";
-            this.employeeidDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // startdateDataGridViewTextBoxColumn
-            // 
-            this.startdateDataGridViewTextBoxColumn.DataPropertyName = "start_date";
-            this.startdateDataGridViewTextBoxColumn.HeaderText = "start_date";
-            this.startdateDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.startdateDataGridViewTextBoxColumn.Name = "startdateDataGridViewTextBoxColumn";
-            this.startdateDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // enddateDataGridViewTextBoxColumn
-            // 
-            this.enddateDataGridViewTextBoxColumn.DataPropertyName = "end_date";
-            this.enddateDataGridViewTextBoxColumn.HeaderText = "end_date";
-            this.enddateDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.enddateDataGridViewTextBoxColumn.Name = "enddateDataGridViewTextBoxColumn";
-            this.enddateDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // reasonDataGridViewTextBoxColumn
-            // 
-            this.reasonDataGridViewTextBoxColumn.DataPropertyName = "reason";
-            this.reasonDataGridViewTextBoxColumn.HeaderText = "reason";
-            this.reasonDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.reasonDataGridViewTextBoxColumn.Name = "reasonDataGridViewTextBoxColumn";
-            this.reasonDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // createdatDataGridViewTextBoxColumn
-            // 
-            this.createdatDataGridViewTextBoxColumn.DataPropertyName = "created_at";
-            this.createdatDataGridViewTextBoxColumn.HeaderText = "created_at";
-            this.createdatDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.createdatDataGridViewTextBoxColumn.Name = "createdatDataGridViewTextBoxColumn";
-            this.createdatDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // updatedatDataGridViewTextBoxColumn
-            // 
-            this.updatedatDataGridViewTextBoxColumn.DataPropertyName = "updated_at";
-            this.updatedatDataGridViewTextBoxColumn.HeaderText = "updated_at";
-            this.updatedatDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.updatedatDataGridViewTextBoxColumn.Name = "updatedatDataGridViewTextBoxColumn";
-            this.updatedatDataGridViewTextBoxColumn.Width = 200;
+            this.status,
+            this.reason,
+            this.createdatDataGridViewTextBoxColumn});
+            this.dataLeaveReq.DataSource = this.leaveRequestsBindingSource1;
+            this.dataLeaveReq.Location = new System.Drawing.Point(10, 290);
+            this.dataLeaveReq.Name = "dataLeaveReq";
+            this.dataLeaveReq.RowHeadersWidth = 62;
+            this.dataLeaveReq.RowTemplate.Height = 28;
+            this.dataLeaveReq.Size = new System.Drawing.Size(698, 292);
+            this.dataLeaveReq.TabIndex = 12;
+            this.dataLeaveReq.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // leaveRequestsBindingSource
             // 
             this.leaveRequestsBindingSource.DataMember = "LeaveRequests";
             this.leaveRequestsBindingSource.DataSource = this.lNBrootDataSetBindingSource;
             // 
-            // lNBrootDataSetBindingSource
-            // 
-            this.lNBrootDataSetBindingSource.DataSource = this.lNBrootDataSet;
-            this.lNBrootDataSetBindingSource.Position = 0;
-            // 
-            // lNBrootDataSet
-            // 
-            this.lNBrootDataSet.DataSetName = "LNBrootDataSet";
-            this.lNBrootDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // txtReason
             // 
             this.txtReason.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtReason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReason.Location = new System.Drawing.Point(270, 740);
-            this.txtReason.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtReason.Location = new System.Drawing.Point(202, 592);
             this.txtReason.Multiline = true;
             this.txtReason.Name = "txtReason";
-            this.txtReason.Size = new System.Drawing.Size(676, 44);
+            this.txtReason.Size = new System.Drawing.Size(508, 36);
             this.txtReason.TabIndex = 9;
             this.txtReason.Text = "Reason...";
             this.txtReason.TextChanged += new System.EventHandler(this.txtReason_TextChanged);
@@ -251,10 +185,9 @@
             // 
             this.button4.BackColor = System.Drawing.Color.OrangeRed;
             this.button4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button4.Location = new System.Drawing.Point(142, 740);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Location = new System.Drawing.Point(106, 592);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 44);
+            this.button4.Size = new System.Drawing.Size(88, 35);
             this.button4.TabIndex = 10;
             this.button4.Text = "Decline";
             this.button4.UseVisualStyleBackColor = false;
@@ -264,21 +197,19 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(2, 37);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(2, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(321, 63);
+            this.label3.Size = new System.Drawing.Size(237, 46);
             this.label3.TabIndex = 20;
             this.label3.Text = "Admin Page";
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(16, 117);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Location = new System.Drawing.Point(12, 94);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(1318, 52);
+            this.txtSearch.Size = new System.Drawing.Size(990, 42);
             this.txtSearch.TabIndex = 21;
             this.txtSearch.Text = "Search....";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
@@ -286,31 +217,30 @@
             // btnPickups
             // 
             this.btnPickups.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnPickups.Location = new System.Drawing.Point(258, 196);
-            this.btnPickups.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPickups.Location = new System.Drawing.Point(194, 157);
             this.btnPickups.Name = "btnPickups";
-            this.btnPickups.Size = new System.Drawing.Size(234, 60);
+            this.btnPickups.Size = new System.Drawing.Size(176, 48);
             this.btnPickups.TabIndex = 22;
             this.btnPickups.Text = "Shift Pickups";
             this.btnPickups.UseVisualStyleBackColor = true;
+            this.btnPickups.Click += new System.EventHandler(this.btnPickups_Click);
             // 
-            // button1
+            // btnVacant
             // 
-            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Location = new System.Drawing.Point(498, 196);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 60);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Vacant Shifts";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnVacant.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnVacant.Location = new System.Drawing.Point(374, 157);
+            this.btnVacant.Name = "btnVacant";
+            this.btnVacant.Size = new System.Drawing.Size(176, 48);
+            this.btnVacant.TabIndex = 23;
+            this.btnVacant.Text = "Vacant Shifts";
+            this.btnVacant.UseVisualStyleBackColor = true;
+            this.btnVacant.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnMain
             // 
-            this.btnMain.Location = new System.Drawing.Point(1138, 363);
-            this.btnMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMain.Location = new System.Drawing.Point(854, 290);
             this.btnMain.Name = "btnMain";
-            this.btnMain.Size = new System.Drawing.Size(132, 98);
+            this.btnMain.Size = new System.Drawing.Size(99, 78);
             this.btnMain.TabIndex = 24;
             this.btnMain.Text = "Main";
             this.btnMain.UseVisualStyleBackColor = true;
@@ -322,10 +252,8 @@
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1614, 31);
+            this.groupBox1.Size = new System.Drawing.Size(1210, 25);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LNB ";
@@ -335,10 +263,9 @@
             // 
             this.lblShiftReq.AutoSize = true;
             this.lblShiftReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShiftReq.Location = new System.Drawing.Point(320, 285);
-            this.lblShiftReq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShiftReq.Location = new System.Drawing.Point(240, 228);
             this.lblShiftReq.Name = "lblShiftReq";
-            this.lblShiftReq.Size = new System.Drawing.Size(266, 44);
+            this.lblShiftReq.Size = new System.Drawing.Size(199, 32);
             this.lblShiftReq.TabIndex = 25;
             this.lblShiftReq.Text = "Shift Requests";
             // 
@@ -346,10 +273,9 @@
             // 
             this.lblLeave.AutoSize = true;
             this.lblLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeave.Location = new System.Drawing.Point(8, 285);
-            this.lblLeave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLeave.Location = new System.Drawing.Point(6, 228);
             this.lblLeave.Name = "lblLeave";
-            this.lblLeave.Size = new System.Drawing.Size(292, 44);
+            this.lblLeave.Size = new System.Drawing.Size(219, 32);
             this.lblLeave.TabIndex = 26;
             this.lblLeave.Text = "Leave Requests";
             // 
@@ -357,60 +283,285 @@
             // 
             this.LblVacant.AutoSize = true;
             this.LblVacant.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVacant.Location = new System.Drawing.Point(628, 285);
-            this.LblVacant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblVacant.Location = new System.Drawing.Point(471, 228);
             this.LblVacant.Name = "LblVacant";
-            this.LblVacant.Size = new System.Drawing.Size(243, 44);
+            this.LblVacant.Size = new System.Drawing.Size(182, 32);
             this.LblVacant.TabIndex = 27;
             this.LblVacant.Text = "Vacant Shifts";
-            // 
-            // leaveRequestsTableAdapter
-            // 
-            this.leaveRequestsTableAdapter.ClearBeforeFill = true;
             // 
             // PowerBIBTN
             // 
             this.PowerBIBTN.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.PowerBIBTN.Location = new System.Drawing.Point(740, 196);
-            this.PowerBIBTN.Margin = new System.Windows.Forms.Padding(4);
+            this.PowerBIBTN.Location = new System.Drawing.Point(555, 157);
             this.PowerBIBTN.Name = "PowerBIBTN";
-            this.PowerBIBTN.Size = new System.Drawing.Size(234, 60);
+            this.PowerBIBTN.Size = new System.Drawing.Size(176, 48);
             this.PowerBIBTN.TabIndex = 23;
             this.PowerBIBTN.Text = "Power BI";
             this.PowerBIBTN.UseVisualStyleBackColor = true;
             this.PowerBIBTN.Click += new System.EventHandler(this.PowerBIBTN_Click);
             // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.lNBrootDataSetBindingSource;
+            // 
+            // lNBrootDataSetBindingSource
+            // 
+            this.lNBrootDataSetBindingSource.DataSource = this.lNBrootDataSet;
+            this.lNBrootDataSetBindingSource.Position = 0;
+            // 
+            // lNBrootDataSet
+            // 
+            this.lNBrootDataSet.DataSetName = "LNBrootDataSet";
+            this.lNBrootDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // leaveRequestsTableAdapter
+            // 
+            this.leaveRequestsTableAdapter.ClearBeforeFill = true;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // testDataSet3
+            // 
+            this.testDataSet3.DataSetName = "TestDataSet3";
+            this.testDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // leaveRequestsBindingSource1
+            // 
+            this.leaveRequestsBindingSource1.DataMember = "LeaveRequests";
+            this.leaveRequestsBindingSource1.DataSource = this.testDataSet3;
+            // 
+            // leaveRequestsTableAdapter1
+            // 
+            this.leaveRequestsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // dataShiftPick
+            // 
+            this.dataShiftPick.AutoGenerateColumns = false;
+            this.dataShiftPick.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dataShiftPick.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataShiftPick.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.shift_id,
+            this.employee_id,
+            this.pickup_status,
+            this.created_at,
+            this.updated_at});
+            this.dataShiftPick.DataSource = this.shiftPickupsBindingSource;
+            this.dataShiftPick.Location = new System.Drawing.Point(12, 350);
+            this.dataShiftPick.Name = "dataShiftPick";
+            this.dataShiftPick.RowHeadersWidth = 62;
+            this.dataShiftPick.RowTemplate.Height = 28;
+            this.dataShiftPick.Size = new System.Drawing.Size(698, 292);
+            this.dataShiftPick.TabIndex = 28;
+            // 
+            // testDataSet4
+            // 
+            this.testDataSet4.DataSetName = "TestDataSet4";
+            this.testDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // shiftPickupsBindingSource
+            // 
+            this.shiftPickupsBindingSource.DataMember = "ShiftPickups";
+            this.shiftPickupsBindingSource.DataSource = this.testDataSet4;
+            // 
+            // shiftPickupsTableAdapter
+            // 
+            this.shiftPickupsTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataVacant
+            // 
+            this.dataVacant.AutoGenerateColumns = false;
+            this.dataVacant.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dataVacant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataVacant.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataVacant.DataSource = this.shiftPickupsBindingSource1;
+            this.dataVacant.Location = new System.Drawing.Point(12, 421);
+            this.dataVacant.Name = "dataVacant";
+            this.dataVacant.RowHeadersWidth = 62;
+            this.dataVacant.RowTemplate.Height = 28;
+            this.dataVacant.Size = new System.Drawing.Size(698, 292);
+            this.dataVacant.TabIndex = 29;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "employee_id";
+            this.dataGridViewTextBoxColumn3.HeaderText = "employee_id";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "created_at";
+            this.dataGridViewTextBoxColumn4.HeaderText = "created_at";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // dataPowerBI
+            // 
+            this.dataPowerBI.AutoGenerateColumns = false;
+            this.dataPowerBI.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dataPowerBI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataPowerBI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.dataPowerBI.DataSource = this.shiftPickupsBindingSource;
+            this.dataPowerBI.Location = new System.Drawing.Point(12, 491);
+            this.dataPowerBI.Name = "dataPowerBI";
+            this.dataPowerBI.RowHeadersWidth = 62;
+            this.dataPowerBI.RowTemplate.Height = 28;
+            this.dataPowerBI.Size = new System.Drawing.Size(698, 292);
+            this.dataPowerBI.TabIndex = 30;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "employee_id";
+            this.dataGridViewTextBoxColumn5.HeaderText = "employee_id";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "created_at";
+            this.dataGridViewTextBoxColumn6.HeaderText = "created_at";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // employeeidDataGridViewTextBoxColumn
+            // 
+            this.employeeidDataGridViewTextBoxColumn.DataPropertyName = "employee_id";
+            this.employeeidDataGridViewTextBoxColumn.HeaderText = "employee_id";
+            this.employeeidDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.employeeidDataGridViewTextBoxColumn.Name = "employeeidDataGridViewTextBoxColumn";
+            this.employeeidDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "status";
+            this.status.MinimumWidth = 8;
+            this.status.Name = "status";
+            this.status.Width = 150;
+            // 
+            // reason
+            // 
+            this.reason.DataPropertyName = "reason";
+            this.reason.HeaderText = "reason";
+            this.reason.MinimumWidth = 8;
+            this.reason.Name = "reason";
+            this.reason.Width = 150;
+            // 
+            // createdatDataGridViewTextBoxColumn
+            // 
+            this.createdatDataGridViewTextBoxColumn.DataPropertyName = "created_at";
+            this.createdatDataGridViewTextBoxColumn.HeaderText = "created_at";
+            this.createdatDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.createdatDataGridViewTextBoxColumn.Name = "createdatDataGridViewTextBoxColumn";
+            this.createdatDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // shift_id
+            // 
+            this.shift_id.DataPropertyName = "shift_id";
+            this.shift_id.HeaderText = "shift_id";
+            this.shift_id.MinimumWidth = 8;
+            this.shift_id.Name = "shift_id";
+            this.shift_id.Width = 150;
+            // 
+            // employee_id
+            // 
+            this.employee_id.DataPropertyName = "employee_id";
+            this.employee_id.HeaderText = "employee_id";
+            this.employee_id.MinimumWidth = 8;
+            this.employee_id.Name = "employee_id";
+            this.employee_id.Width = 150;
+            // 
+            // pickup_status
+            // 
+            this.pickup_status.DataPropertyName = "pickup_status";
+            this.pickup_status.HeaderText = "pickup_status";
+            this.pickup_status.MinimumWidth = 8;
+            this.pickup_status.Name = "pickup_status";
+            this.pickup_status.Width = 150;
+            // 
+            // created_at
+            // 
+            this.created_at.DataPropertyName = "created_at";
+            this.created_at.HeaderText = "created_at";
+            this.created_at.MinimumWidth = 8;
+            this.created_at.Name = "created_at";
+            this.created_at.Width = 150;
+            // 
+            // updated_at
+            // 
+            this.updated_at.DataPropertyName = "updated_at";
+            this.updated_at.HeaderText = "updated_at";
+            this.updated_at.MinimumWidth = 8;
+            this.updated_at.Name = "updated_at";
+            this.updated_at.Width = 150;
+            // 
+            // testDataSet7
+            // 
+            this.testDataSet7.DataSetName = "TestDataSet7";
+            this.testDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // shiftPickupsBindingSource1
+            // 
+            this.shiftPickupsBindingSource1.DataMember = "ShiftPickups";
+            this.shiftPickupsBindingSource1.DataSource = this.testDataSet7;
+            // 
+            // shiftPickupsTableAdapter1
+            // 
+            this.shiftPickupsTableAdapter1.ClearBeforeFill = true;
+            // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1406, 856);
+            this.ClientSize = new System.Drawing.Size(1054, 685);
+            this.Controls.Add(this.dataPowerBI);
+            this.Controls.Add(this.dataVacant);
+            this.Controls.Add(this.dataShiftPick);
             this.Controls.Add(this.LblVacant);
             this.Controls.Add(this.lblLeave);
             this.Controls.Add(this.lblShiftReq);
             this.Controls.Add(this.btnMain);
             this.Controls.Add(this.PowerBIBTN);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVacant);
             this.Controls.Add(this.btnPickups);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnShiftApprove);
             this.Controls.Add(this.btnLeave);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnTest);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataLeaveReq);
             this.Controls.Add(this.txtReason);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExit);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Admin";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Admin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataLeaveReq)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lNBrootDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lNBrootDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataShiftPick)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shiftPickupsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataVacant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPowerBI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shiftPickupsBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,17 +571,16 @@
 
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnShiftApprove;
         private System.Windows.Forms.Button btnLeave;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataLeaveReq;
         private System.Windows.Forms.TextBox txtReason;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnPickups;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVacant;
         private System.Windows.Forms.Button btnMain;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblShiftReq;
@@ -440,14 +590,33 @@
         private LNBrootDataSet lNBrootDataSet;
         private System.Windows.Forms.BindingSource leaveRequestsBindingSource;
         private LNBrootDataSetTableAdapters.LeaveRequestsTableAdapter leaveRequestsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn leaveidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enddateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reasonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button PowerBIBTN;
+        private System.Windows.Forms.BindingSource usersBindingSource;
+        private LNBrootDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
+        private TestDataSet3 testDataSet3;
+        private System.Windows.Forms.BindingSource leaveRequestsBindingSource1;
+        private TestDataSet3TableAdapters.LeaveRequestsTableAdapter leaveRequestsTableAdapter1;
+        private System.Windows.Forms.DataGridView dataShiftPick;
+        private TestDataSet4 testDataSet4;
+        private System.Windows.Forms.BindingSource shiftPickupsBindingSource;
+        private TestDataSet4TableAdapters.ShiftPickupsTableAdapter shiftPickupsTableAdapter;
+        private System.Windows.Forms.DataGridView dataVacant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridView dataPowerBI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reason;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shift_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employee_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pickup_status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn created_at;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updated_at;
+        private TestDataSet7 testDataSet7;
+        private System.Windows.Forms.BindingSource shiftPickupsBindingSource1;
+        private TestDataSet7TableAdapters.ShiftPickupsTableAdapter shiftPickupsTableAdapter1;
     }
 }

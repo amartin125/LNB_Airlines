@@ -1,27 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System;
 using System.Data.SqlClient;
-using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace LNB_Airlines
 {
-    public class DatabaseConnection
+    public static class DatabaseConnection
     {
         // Method to establish a database connection
         public static SqlConnection ConnectToDatabase()
         {
             List<string> connectionStrings = new List<string>
-            {
+            {//Andrews
+                "Server=DESKTOP-VEH3C8M\\SQLEXPRESS01;Database=Test;Integrated Security=True;",
+                //jakes
                 "Server=JAKESLAPTOP\\SQLEXPRESS01;Database=LNBroot;Integrated Security=True;",
                 "Server=(LocalDb)\\LNBroot;Database=LNBairlines;Integrated Security=True;",
-                //Andrews login
-                "Server=DESKTOP-VEH3C8M\\SQLEXPRESS01;Database=Test;Integrated Security=True;"
-
-
             };
 
             SqlConnection connection = null;
@@ -32,10 +26,12 @@ namespace LNB_Airlines
                 {
                     connection = new SqlConnection(connectionString);
                     connection.Open();
+                    MessageBox.Show($"Connected using: {connectionString}");
                     break;
                 }
-                catch
+                catch (Exception ex)
                 {
+                    MessageBox.Show($"Failed to connect using connection string: {connectionString}\nError: {ex.Message}");
                     connection?.Dispose();
                     connection = null;
                 }
@@ -49,21 +45,36 @@ namespace LNB_Airlines
             return connection;
         }
 
-        // Method to validate user credentials
-        public static bool ValidateUser(string username, string password, string role)
+        // Method to validate user credentials and return employee ID
+        public static int ValidateUser(string username, string password, string role)
         {
+            int employeeId = -1; // Default to -1 for invalid credentials
+
             using (SqlConnection connection = ConnectToDatabase())
             {
-                string query = "SELECT COUNT(1) FROM Users WHERE Username = @Username AND Password = @Password AND Role = @Role";
+                string query = "SELECT employee_id FROM Users WHERE Username = @Username AND Password = @Password AND Role = @Role";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Username", username);
                 command.Parameters.AddWithValue("@Password", password);
                 command.Parameters.AddWithValue("@Role", role);
 
-                int result = Convert.ToInt32(command.ExecuteScalar());
-                return result == 1;
+                try
+                {
+                    MessageBox.Show($"Executing query with parameters: Username={username}, Password={password}, Role={role}");
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        employeeId = Convert.ToInt32(result);
+                    }
+                    MessageBox.Show($"Query Result: {result}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}");
+                }
             }
+
+            return employeeId;
         }
     }
 }
-
