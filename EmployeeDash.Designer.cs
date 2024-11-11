@@ -48,12 +48,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupboxRequests = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.startdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enddateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reasonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updatedatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.leaveRequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet = new LNB_Airlines.TestDataSet();
             this.label9 = new System.Windows.Forms.Label();
@@ -83,6 +77,9 @@
             this.employeesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter1 = new LNB_Airlines.TestDataSet6TableAdapters.EmployeesTableAdapter();
             this.analyticsTableAdapter = new LNB_Airlines.TestDataSet8TableAdapters.AnalyticsTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employee_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupboxUpcoming.SuspendLayout();
@@ -293,12 +290,9 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.startdateDataGridViewTextBoxColumn,
-            this.enddateDataGridViewTextBoxColumn,
-            this.reasonDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.createdatDataGridViewTextBoxColumn,
-            this.updatedatDataGridViewTextBoxColumn});
+            this.Column1,
+            this.employee_id,
+            this.reason});
             this.dataGridView1.DataSource = this.leaveRequestsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(1, 34);
             this.dataGridView1.Name = "dataGridView1";
@@ -307,54 +301,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(721, 138);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // startdateDataGridViewTextBoxColumn
-            // 
-            this.startdateDataGridViewTextBoxColumn.DataPropertyName = "start_date";
-            this.startdateDataGridViewTextBoxColumn.HeaderText = "start_date";
-            this.startdateDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.startdateDataGridViewTextBoxColumn.Name = "startdateDataGridViewTextBoxColumn";
-            this.startdateDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // enddateDataGridViewTextBoxColumn
-            // 
-            this.enddateDataGridViewTextBoxColumn.DataPropertyName = "end_date";
-            this.enddateDataGridViewTextBoxColumn.HeaderText = "end_date";
-            this.enddateDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.enddateDataGridViewTextBoxColumn.Name = "enddateDataGridViewTextBoxColumn";
-            this.enddateDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // reasonDataGridViewTextBoxColumn
-            // 
-            this.reasonDataGridViewTextBoxColumn.DataPropertyName = "reason";
-            this.reasonDataGridViewTextBoxColumn.HeaderText = "reason";
-            this.reasonDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.reasonDataGridViewTextBoxColumn.Name = "reasonDataGridViewTextBoxColumn";
-            this.reasonDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // createdatDataGridViewTextBoxColumn
-            // 
-            this.createdatDataGridViewTextBoxColumn.DataPropertyName = "created_at";
-            this.createdatDataGridViewTextBoxColumn.HeaderText = "created_at";
-            this.createdatDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.createdatDataGridViewTextBoxColumn.Name = "createdatDataGridViewTextBoxColumn";
-            this.createdatDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // updatedatDataGridViewTextBoxColumn
-            // 
-            this.updatedatDataGridViewTextBoxColumn.DataPropertyName = "updated_at";
-            this.updatedatDataGridViewTextBoxColumn.HeaderText = "updated_at";
-            this.updatedatDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.updatedatDataGridViewTextBoxColumn.Name = "updatedatDataGridViewTextBoxColumn";
-            this.updatedatDataGridViewTextBoxColumn.Width = 150;
             // 
             // leaveRequestsBindingSource
             // 
@@ -559,6 +505,31 @@
             // 
             this.analyticsTableAdapter.ClearBeforeFill = true;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "leave_id";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 150;
+            // 
+            // employee_id
+            // 
+            this.employee_id.DataPropertyName = "employee_id";
+            this.employee_id.HeaderText = "employee_id";
+            this.employee_id.MinimumWidth = 8;
+            this.employee_id.Name = "employee_id";
+            this.employee_id.Width = 150;
+            // 
+            // reason
+            // 
+            this.reason.DataPropertyName = "reason";
+            this.reason.HeaderText = "reason";
+            this.reason.MinimumWidth = 8;
+            this.reason.Name = "reason";
+            this.reason.Width = 150;
+            // 
             // EmployeeDash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -657,12 +628,9 @@
         private TestDataSet8 testDataSet8;
         private System.Windows.Forms.BindingSource analyticsBindingSource;
         private TestDataSet8TableAdapters.AnalyticsTableAdapter analyticsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enddateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reasonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employee_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reason;
     }
 }
 
