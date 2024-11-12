@@ -53,13 +53,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBreakdown = new System.Windows.Forms.GroupBox();
-            this.analyticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet8 = new LNB_Airlines.TestDataSet8();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupAvailableNeed = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.analyticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet8 = new LNB_Airlines.TestDataSet8();
             this.label1 = new System.Windows.Forms.Label();
             this.btnChatbot = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -77,9 +77,9 @@
             this.employeesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter1 = new LNB_Airlines.TestDataSet6TableAdapters.EmployeesTableAdapter();
             this.analyticsTableAdapter = new LNB_Airlines.TestDataSet8TableAdapters.AnalyticsTableAdapter();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employee_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testDataSet10 = new LNB_Airlines.TestDataSet10();
+            this.testDataSet10BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet10BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupboxUpcoming.SuspendLayout();
@@ -93,15 +93,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             this.groupBreakdown.SuspendLayout();
+            this.groupAvailableNeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.analyticsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet8)).BeginInit();
-            this.groupAvailableNeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -289,16 +292,13 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.employee_id,
-            this.reason});
-            this.dataGridView1.DataSource = this.leaveRequestsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 34);
+            this.dataGridView1.DataSource = this.testDataSet10BindingSource1;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 22);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(721, 138);
+            this.dataGridView1.Size = new System.Drawing.Size(716, 133);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -340,16 +340,6 @@
             this.groupBreakdown.Size = new System.Drawing.Size(352, 111);
             this.groupBreakdown.TabIndex = 4;
             this.groupBreakdown.TabStop = false;
-            // 
-            // analyticsBindingSource
-            // 
-            this.analyticsBindingSource.DataMember = "Analytics";
-            this.analyticsBindingSource.DataSource = this.testDataSet8;
-            // 
-            // testDataSet8
-            // 
-            this.testDataSet8.DataSetName = "TestDataSet8";
-            this.testDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label11
             // 
@@ -397,6 +387,16 @@
             this.label3.Size = new System.Drawing.Size(120, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Available needs";
+            // 
+            // analyticsBindingSource
+            // 
+            this.analyticsBindingSource.DataMember = "Analytics";
+            this.analyticsBindingSource.DataSource = this.testDataSet8;
+            // 
+            // testDataSet8
+            // 
+            this.testDataSet8.DataSetName = "TestDataSet8";
+            this.testDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -505,30 +505,20 @@
             // 
             this.analyticsTableAdapter.ClearBeforeFill = true;
             // 
-            // Column1
+            // testDataSet10
             // 
-            this.Column1.DataPropertyName = "leave_id";
-            this.Column1.HeaderText = "Column1";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
+            this.testDataSet10.DataSetName = "TestDataSet10";
+            this.testDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // employee_id
+            // testDataSet10BindingSource
             // 
-            this.employee_id.DataPropertyName = "employee_id";
-            this.employee_id.HeaderText = "employee_id";
-            this.employee_id.MinimumWidth = 8;
-            this.employee_id.Name = "employee_id";
-            this.employee_id.Width = 150;
+            this.testDataSet10BindingSource.DataSource = this.testDataSet10;
+            this.testDataSet10BindingSource.Position = 0;
             // 
-            // reason
+            // testDataSet10BindingSource1
             // 
-            this.reason.DataPropertyName = "reason";
-            this.reason.HeaderText = "reason";
-            this.reason.MinimumWidth = 8;
-            this.reason.Name = "reason";
-            this.reason.Width = 150;
+            this.testDataSet10BindingSource1.DataSource = this.testDataSet10;
+            this.testDataSet10BindingSource1.Position = 0;
             // 
             // EmployeeDash
             // 
@@ -563,16 +553,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             this.groupBreakdown.ResumeLayout(false);
             this.groupBreakdown.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.analyticsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet8)).EndInit();
             this.groupAvailableNeed.ResumeLayout(false);
             this.groupAvailableNeed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.analyticsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,9 +621,9 @@
         private TestDataSet8 testDataSet8;
         private System.Windows.Forms.BindingSource analyticsBindingSource;
         private TestDataSet8TableAdapters.AnalyticsTableAdapter analyticsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employee_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reason;
+        private System.Windows.Forms.BindingSource testDataSet10BindingSource1;
+        private TestDataSet10 testDataSet10;
+        private System.Windows.Forms.BindingSource testDataSet10BindingSource;
     }
 }
 

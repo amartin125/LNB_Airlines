@@ -173,6 +173,10 @@
     <Compile Include="EmployeeDash.Designer.cs">
       <DependentUpon>EmployeeDash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs" />
     <Compile Include="LNBrootDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,6 +199,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TestDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TestDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestDataSet10.xsd</DependentUpon>
     </Compile>
     <Compile Include="TestDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -231,6 +240,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TestDataSet8.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TestDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestDataSet9.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +254,7 @@
     <EmbeddedResource Include="EmployeeDash.resx">
       <DependentUpon>EmployeeDash.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +309,17 @@
     </None>
     <None Include="TestDataSet1.xss">
       <DependentUpon>TestDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TestDataSet10.xsc">
+      <DependentUpon>TestDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="TestDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TestDataSet10.xss">
+      <DependentUpon>TestDataSet10.xsd</DependentUpon>
     </None>
     <None Include="TestDataSet2.xsc">
       <DependentUpon>TestDataSet2.xsd</DependentUpon>
@@ -371,6 +397,17 @@
     </None>
     <None Include="TestDataSet8.xss">
       <DependentUpon>TestDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="TestDataSet9.xsc">
+      <DependentUpon>TestDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="TestDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TestDataSet9.xss">
+      <DependentUpon>TestDataSet9.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
