@@ -293,5 +293,12 @@ namespace LNB_Airlines
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Chatbot chat = new Chatbot();
+            chat.Show();
+        }
     }
 }

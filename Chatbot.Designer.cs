@@ -1,4 +1,4 @@
-﻿namespace Chatbot
+﻿namespace LNB_Airlines
 {
     partial class Chatbot
     {

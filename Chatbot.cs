@@ -10,8 +10,8 @@ using System.Windows.Forms;
 
 
 
-    namespace Chatbot
-    {
+    namespace LNB_Airlines
+{
         public partial class Chatbot : Form
         {
             // List to hold available shifts for LNB Airlines

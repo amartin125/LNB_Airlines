@@ -63,9 +63,9 @@ namespace LNB_Airlines
 
         private void btnChatbot_Click(object sender, EventArgs e)
         {
-            Chatbot chatbot = new Chatbot();
-            chatbot.Show();
             this.Hide();
+            Chatbot chat = new Chatbot();
+            chat.Show();
         }
         // Default constructor
         public EmployeeDash()
