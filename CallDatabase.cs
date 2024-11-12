@@ -27,7 +27,7 @@ namespace LNB_Airlines
                 {
                     connection = new SqlConnection(connectionString);
                     connection.Open();
-                    MessageBox.Show($"Connected using: {connectionString}");
+                    //MessageBox.Show($"Connected using: {connectionString}");
                     break;
                 }
                 catch (Exception ex)
@@ -61,13 +61,13 @@ namespace LNB_Airlines
 
                 try
                 {
-                    MessageBox.Show($"Executing query with parameters: Username={username}, Password={password}, Role={role}");
+                    //MessageBox.Show($"Executing query with parameters: Username={username}, Password={password}, Role={role}");
                     object result = command.ExecuteScalar();
                     if (result != null)
                     {
                         employeeId = Convert.ToInt32(result);
                     }
-                    MessageBox.Show($"Query Result: {result}");
+                    //MessageBox.Show($"Query Result: {result}");
                 }
                 catch (Exception ex)
                 {

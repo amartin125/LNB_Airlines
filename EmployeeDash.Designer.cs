@@ -77,6 +77,9 @@
             this.employeesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter1 = new LNB_Airlines.TestDataSet6TableAdapters.EmployeesTableAdapter();
             this.analyticsTableAdapter = new LNB_Airlines.TestDataSet8TableAdapters.AnalyticsTableAdapter();
+            this.testDataSet10 = new LNB_Airlines.TestDataSet10();
+            this.testDataSet10BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet10BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupboxUpcoming.SuspendLayout();
@@ -99,6 +102,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -301,17 +307,73 @@
             this.groupboxRequests.TabIndex = 8;
             this.groupboxRequests.TabStop = false;
             // 
-            // dataLeaveReqDASH
+            // dataGridView1
             // 
-            this.dataLeaveReqDASH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataLeaveReqDASH.Location = new System.Drawing.Point(1, 42);
-            this.dataLeaveReqDASH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataLeaveReqDASH.Name = "dataLeaveReqDASH";
-            this.dataLeaveReqDASH.RowHeadersWidth = 62;
-            this.dataLeaveReqDASH.RowTemplate.Height = 28;
-            this.dataLeaveReqDASH.Size = new System.Drawing.Size(961, 172);
-            this.dataLeaveReqDASH.TabIndex = 6;
-            this.dataLeaveReqDASH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.startdateDataGridViewTextBoxColumn,
+            this.enddateDataGridViewTextBoxColumn,
+            this.reasonDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.createdatDataGridViewTextBoxColumn,
+            this.updatedatDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.leaveRequestsBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(1, 34);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(721, 138);
+            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // startdateDataGridViewTextBoxColumn
+            // 
+            this.startdateDataGridViewTextBoxColumn.DataPropertyName = "start_date";
+            this.startdateDataGridViewTextBoxColumn.HeaderText = "start_date";
+            this.startdateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.startdateDataGridViewTextBoxColumn.Name = "startdateDataGridViewTextBoxColumn";
+            this.startdateDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // enddateDataGridViewTextBoxColumn
+            // 
+            this.enddateDataGridViewTextBoxColumn.DataPropertyName = "end_date";
+            this.enddateDataGridViewTextBoxColumn.HeaderText = "end_date";
+            this.enddateDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.enddateDataGridViewTextBoxColumn.Name = "enddateDataGridViewTextBoxColumn";
+            this.enddateDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // reasonDataGridViewTextBoxColumn
+            // 
+            this.reasonDataGridViewTextBoxColumn.DataPropertyName = "reason";
+            this.reasonDataGridViewTextBoxColumn.HeaderText = "reason";
+            this.reasonDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.reasonDataGridViewTextBoxColumn.Name = "reasonDataGridViewTextBoxColumn";
+            this.reasonDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // createdatDataGridViewTextBoxColumn
+            // 
+            this.createdatDataGridViewTextBoxColumn.DataPropertyName = "created_at";
+            this.createdatDataGridViewTextBoxColumn.HeaderText = "created_at";
+            this.createdatDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.createdatDataGridViewTextBoxColumn.Name = "createdatDataGridViewTextBoxColumn";
+            this.createdatDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // updatedatDataGridViewTextBoxColumn
+            // 
+            this.updatedatDataGridViewTextBoxColumn.DataPropertyName = "updated_at";
+            this.updatedatDataGridViewTextBoxColumn.HeaderText = "updated_at";
+            this.updatedatDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.updatedatDataGridViewTextBoxColumn.Name = "updatedatDataGridViewTextBoxColumn";
+            this.updatedatDataGridViewTextBoxColumn.Width = 150;
             // 
             // leaveRequestsBindingSource
             // 
@@ -530,6 +592,21 @@
             // 
             this.analyticsTableAdapter.ClearBeforeFill = true;
             // 
+            // testDataSet10
+            // 
+            this.testDataSet10.DataSetName = "TestDataSet10";
+            this.testDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // testDataSet10BindingSource
+            // 
+            this.testDataSet10BindingSource.DataSource = this.testDataSet10;
+            this.testDataSet10BindingSource.Position = 0;
+            // 
+            // testDataSet10BindingSource1
+            // 
+            this.testDataSet10BindingSource1.DataSource = this.testDataSet10;
+            this.testDataSet10BindingSource1.Position = 0;
+            // 
             // EmployeeDash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -574,6 +651,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -629,6 +709,12 @@
         private TestDataSet8 testDataSet8;
         private System.Windows.Forms.BindingSource analyticsBindingSource;
         private TestDataSet8TableAdapters.AnalyticsTableAdapter analyticsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enddateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reasonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
     }
 }
 
