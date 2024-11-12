@@ -173,10 +173,6 @@
     <Compile Include="EmployeeDash.Designer.cs">
       <DependentUpon>EmployeeDash.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs" />
     <Compile Include="LNBrootDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -254,7 +250,6 @@
     <EmbeddedResource Include="EmployeeDash.resx">
       <DependentUpon>EmployeeDash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
