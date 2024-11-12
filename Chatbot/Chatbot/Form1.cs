@@ -7,146 +7,132 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LnbChatBot;
 
-
-
-    namespace Chatbot
+namespace LnbChatBot
+{
+    public partial class Form1 : Form
     {
-        public partial class Form1 : Form
-        {
-            // List to hold available shifts for LNB Airlines
-            private List<Shift> availableShifts = new List<Shift>
+        
+        private List<Shift> availableShifts = new List<Shift>
         {
             new Shift("Pilot", DateTime.Now.AddDays(1), "09:00 AM"),
-            new Shift("Flight Attendant", DateTime.Now.AddDays(1), "09:00 AM"),
-            new Shift("Ground Crew", DateTime.Now.AddDays(2), "01:00 PM"),
+            new Shift("Chief Operator", DateTime.Now.AddDays(2), "12:00 PM"),
+            new Shift("Ground Crew", DateTime.Now.AddDays(3), "02:00 PM")
         };
 
-            public Form1()
-            {
-                InitializeComponent();
-            }
+        public Form1()
+        {
+            InitializeComponent();
+        }
 
-        // Event handler for sending a message
+        
         private void btnSend_Click(object sender, EventArgs e)
         {
+            
             string userInput = txtUserInput.Text.Trim();
+
             if (!string.IsNullOrEmpty(userInput))
             {
+              
                 rtbChatHistory.AppendText("You: " + userInput + "\n");
+
+                
                 string botResponse = GetChatbotResponse(userInput);
+
+                
                 rtbChatHistory.AppendText("Bot: " + botResponse + "\n");
+
+                
                 txtUserInput.Clear();
             }
         }
 
-        // Method to return chatbot response
+        
         private string GetChatbotResponse(string userInput)
-            {
-                userInput = userInput.ToLower(); // Simplify input processing
+        {
+            userInput = userInput.ToLower(); 
 
-                if (userInput.Contains("pick up"))
-                {
-                    return PickUpShift(userInput);
-                }
-                else if (userInput.Contains("drop"))
-                {
-                    return DropShift(userInput);
-                }
-                else if (userInput.Contains("view shifts"))
-                {
-                    return ListAvailableShifts();
-                }
-                else if (userInput.Contains("hello"))
-                {
-                    return "Hello! How can I assist you with your shifts at LNB Airlines today?";
-                }
-                else if (userInput.Contains("bye"))
-                {
-                    return "Goodbye! Have a nice day!";
-                }
-                else
-                {
-                    return "I'm sorry, I didn't understand that. Try asking about picking up, dropping, or viewing available shifts.";
-                }
+            if (userInput.Contains("pick up"))
+            {
+                return PickUpShift(userInput);
             }
-
-            // Method to handle picking up a shift
-            private string PickUpShift(string userInput)
+            else if (userInput.Contains("drop"))
             {
-                foreach (var shift in availableShifts)
-                {
-                    if (userInput.Contains(shift.Role.ToLower()) && userInput.Contains(shift.Date.ToShortDateString()))
-                    {
-                        if (shift.IsAvailable)
-                        {
-                            shift.IsAvailable = false;
-                            return $"You have successfully picked up the {shift.Role} shift on {shift.Date.ToShortDateString()} at {shift.Time}.";
-                        }
-                        else
-                        {
-                            return $"Sorry, the {shift.Role} shift on {shift.Date.ToShortDateString()} at {shift.Time} is already taken.";
-                        }
-                    }
-                }
-                return "Sorry, the shift you requested is not available or doesn't exist.";
+                return DropShift(userInput);
             }
-
-            // Method to handle dropping a shift
-            private string DropShift(string userInput)
+            else if (userInput.Contains("view shifts"))
             {
-                foreach (var shift in availableShifts)
-                {
-                    if (userInput.Contains(shift.Role.ToLower()) && userInput.Contains(shift.Date.ToShortDateString()))
-                    {
-                        if (!shift.IsAvailable)
-                        {
-                            shift.IsAvailable = true;
-                            return $"You have successfully dropped the {shift.Role} shift on {shift.Date.ToShortDateString()} at {shift.Time}.";
-                        }
-                        else
-                        {
-                            return $"You don't have the {shift.Role} shift on {shift.Date.ToShortDateString()} to drop.";
-                        }
-                    }
-                }
-                return "Sorry, the shift you are trying to drop is not found.";
+                return ListAvailableShifts();
             }
-
-            // Method to list all available shifts
-            private string ListAvailableShifts()
+            else if (userInput.Contains("hello"))
             {
-                StringBuilder shiftList = new StringBuilder();
-                foreach (var shift in availableShifts)
+                return "Hello! How can I assist you with your shifts today?";
+            }
+            else if (userInput.Contains("bye"))
+            {
+                return "Goodbye! Have a nice day!";
+            }
+            else
+            {
+                return "I'm sorry, I didn't understand that. Try asking about picking up, dropping, or viewing shifts.";
+            }
+        }
+
+       
+        private string PickUpShift(string userInput)
+        {
+            foreach (var shift in availableShifts)
+            {
+                if (userInput.Contains(shift.Role.ToLower()) && userInput.Contains(shift.Date.ToShortDateString()))
                 {
                     if (shift.IsAvailable)
                     {
-                        shiftList.AppendLine(shift.ToString());
+                        shift.IsAvailable = false;
+                        return $"You have successfully picked up the {shift.Role} shift on {shift.Date.ToShortDateString()} at {shift.Time}.";
+                    }
+                    else
+                    {
+                        return $"Sorry, the {shift.Role} shift on {shift.Date.ToShortDateString()} at {shift.Time} is already taken.";
                     }
                 }
-                return shiftList.Length > 0 ? shiftList.ToString() : "No shifts are currently available.";
             }
+            return "Sorry, the shift you requested is not available.";
         }
 
-        // Shift class to represent each shift with role, date, and time
-        public class Shift
+        
+        private string DropShift(string userInput)
         {
-            public string Role { get; set; }
-            public DateTime Date { get; set; }
-            public string Time { get; set; }
-            public bool IsAvailable { get; set; }
-
-            public Shift(string role, DateTime date, string time)
+            foreach (var shift in availableShifts)
             {
-                Role = role;
-                Date = date;
-                Time = time;
-                IsAvailable = true;
+                if (userInput.Contains(shift.Role.ToLower()) && userInput.Contains(shift.Date.ToShortDateString()))
+                {
+                    if (!shift.IsAvailable)
+                    {
+                        shift.IsAvailable = true;
+                        return $"You have successfully dropped the {shift.Role} shift on {shift.Date.ToShortDateString()} at {shift.Time}.";
+                    }
+                    else
+                    {
+                        return $"You don't have the {shift.Role} shift on {shift.Date.ToShortDateString()} to drop.";
+                    }
+                }
             }
+            return "Sorry, the shift you are trying to drop is not found.";
+        }
 
-            public override string ToString()
+        
+        private string ListAvailableShifts()
+        {
+            System.Text.StringBuilder shiftList = new System.Text.StringBuilder();
+            foreach (var shift in availableShifts)
             {
-                return $"{Role} shift on {Date.ToShortDateString()} at {Time}";
+                if (shift.IsAvailable)
+                {
+                    shiftList.AppendLine(shift.ToString());
+                }
             }
+            return shiftList.Length > 0 ? shiftList.ToString() : "No shifts are currently available.";
         }
     }
+}
