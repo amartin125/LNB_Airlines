@@ -220,7 +220,7 @@ namespace LNB_Airlines
 
         private void PowerBIBTN_Click(object sender, EventArgs e)
         {
-            string filePath = @"C:\Users\titan\Documents\TESTPOWERBI.pbix"; // Replace with the actual path to your Power BI file
+            string filePath = @"C:\Users\User\Desktop\School\Scrum\LNB_Airlines\LNBBI.pbix"; // Replace with the actual path to your Power BI file
 
             try
             {
@@ -299,6 +299,11 @@ namespace LNB_Airlines
             this.Hide();
             Chatbot chat = new Chatbot();
             chat.Show();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

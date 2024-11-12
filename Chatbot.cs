@@ -61,6 +61,10 @@ using System.Windows.Forms;
                 {
                     return "Hello! How can I assist you with your shifts at LNB Airlines today?";
                 }
+                else if (userInput.Contains("hi"))
+                {
+                    return "Hello! How can I assist you with your shifts at LNB Airlines today?";
+                }
                 else if (userInput.Contains("bye"))
                 {
                     return "Goodbye! Have a nice day!";

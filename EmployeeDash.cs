@@ -27,6 +27,10 @@ namespace LNB_Airlines
         }
         private void EmployeeDash_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'testDataSet13.Roles' table. You can move, or remove it, as needed.
+            this.rolesTableAdapter.Fill(this.testDataSet13.Roles);
+            // TODO: This line of code loads data into the 'testDataSet11.Shifts' table. You can move, or remove it, as needed.
+            this.shiftsTableAdapter1.Fill(this.testDataSet11.Shifts);
             LoadEmployeeLeaveRequests();
         }
 
@@ -68,6 +72,32 @@ namespace LNB_Airlines
             chat.Show();
         }
         // Default constructor
+        private void LoadAllEmployeeData()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // SQL query to retrieve all employee data
+                    string query = "SELECT * FROM Employees";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    // Assuming dataGridView2 is the DataGridView for all employee data
+                    dataGridView2.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading all employee data: " + ex.Message);
+            }
+        }
+
         public EmployeeDash()
         {
             InitializeComponent();
@@ -152,7 +182,7 @@ namespace LNB_Airlines
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            LoadAllEmployeeData();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -160,6 +190,14 @@ namespace LNB_Airlines
             LoadEmployeeData();
         }
 
-       
+        private void dataLeaveReqDASH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

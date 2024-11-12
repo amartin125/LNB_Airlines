@@ -21,7 +21,7 @@ namespace LNB_Airlines
 
             // Determine selected role
             string userSelectedRole = rdEmployee.Checked ? "Employee" : "Admin";
-            MessageBox.Show($"Selected Role: {userSelectedRole}");
+            //MessageBox.Show($"Selected Role: {userSelectedRole}");
 
             try
             {
