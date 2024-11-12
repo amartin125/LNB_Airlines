@@ -77,9 +77,7 @@
             this.employeesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter1 = new LNB_Airlines.TestDataSet6TableAdapters.EmployeesTableAdapter();
             this.analyticsTableAdapter = new LNB_Airlines.TestDataSet8TableAdapters.AnalyticsTableAdapter();
-            this.testDataSet10 = new LNB_Airlines.TestDataSet10();
-            this.testDataSet10BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet10BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupboxUpcoming.SuspendLayout();
@@ -102,9 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource1)).BeginInit();
+            
             this.SuspendLayout();
             // 
             // groupBox1
@@ -309,23 +305,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.startdateDataGridViewTextBoxColumn,
-            this.enddateDataGridViewTextBoxColumn,
-            this.reasonDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.createdatDataGridViewTextBoxColumn,
-            this.updatedatDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.leaveRequestsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 34);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(721, 138);
-            this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            
+            
             // 
             // startdateDataGridViewTextBoxColumn
             // 
@@ -594,18 +575,11 @@
             // 
             // testDataSet10
             // 
-            this.testDataSet10.DataSetName = "TestDataSet10";
-            this.testDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            
             // 
             // testDataSet10BindingSource
             // 
-            this.testDataSet10BindingSource.DataSource = this.testDataSet10;
-            this.testDataSet10BindingSource.Position = 0;
-            // 
-            // testDataSet10BindingSource1
-            // 
-            this.testDataSet10BindingSource1.DataSource = this.testDataSet10;
-            this.testDataSet10BindingSource1.Position = 0;
+           
             // 
             // EmployeeDash
             // 
@@ -651,9 +625,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource1)).EndInit();
+          
             this.ResumeLayout(false);
             this.PerformLayout();
 
