@@ -47,9 +47,7 @@
             this.testDataSet1 = new LNB_Airlines.TestDataSet1();
             this.label7 = new System.Windows.Forms.Label();
             this.groupboxRequests = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.leaveRequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet = new LNB_Airlines.TestDataSet();
+            this.dataLeaveReqDASH = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBreakdown = new System.Windows.Forms.GroupBox();
@@ -58,6 +56,8 @@
             this.groupAvailableNeed = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.leaveRequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet = new LNB_Airlines.TestDataSet();
             this.analyticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet8 = new LNB_Airlines.TestDataSet8();
             this.label1 = new System.Windows.Forms.Label();
@@ -77,9 +77,6 @@
             this.employeesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter1 = new LNB_Airlines.TestDataSet6TableAdapters.EmployeesTableAdapter();
             this.analyticsTableAdapter = new LNB_Airlines.TestDataSet8TableAdapters.AnalyticsTableAdapter();
-            this.testDataSet10 = new LNB_Airlines.TestDataSet10();
-            this.testDataSet10BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet10BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupboxUpcoming.SuspendLayout();
@@ -89,11 +86,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.shiftPickupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).BeginInit();
             this.groupboxRequests.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataLeaveReqDASH)).BeginInit();
             this.groupBreakdown.SuspendLayout();
             this.groupAvailableNeed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.analyticsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet2)).BeginInit();
@@ -102,9 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -112,9 +106,11 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(2, 0);
+            this.groupBox1.Location = new System.Drawing.Point(3, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1210, 25);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1613, 31);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LNB ";
@@ -128,9 +124,11 @@
             this.groupBox2.Controls.Add(this.groupboxRequests);
             this.groupBox2.Controls.Add(this.groupBreakdown);
             this.groupBox2.Controls.Add(this.groupAvailableNeed);
-            this.groupBox2.Location = new System.Drawing.Point(2, 68);
+            this.groupBox2.Location = new System.Drawing.Point(3, 85);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(789, 538);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(1052, 672);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -140,9 +138,11 @@
             this.groupBox6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox6.Controls.Add(this.groupboxUpcoming);
             this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Location = new System.Drawing.Point(402, 142);
+            this.groupBox6.Location = new System.Drawing.Point(536, 178);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(352, 231);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox6.Size = new System.Drawing.Size(469, 289);
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             // 
@@ -150,9 +150,11 @@
             // 
             this.groupboxUpcoming.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupboxUpcoming.Controls.Add(this.label8);
-            this.groupboxUpcoming.Location = new System.Drawing.Point(6, 35);
+            this.groupboxUpcoming.Location = new System.Drawing.Point(8, 44);
+            this.groupboxUpcoming.Margin = new System.Windows.Forms.Padding(4);
             this.groupboxUpcoming.Name = "groupboxUpcoming";
-            this.groupboxUpcoming.Size = new System.Drawing.Size(340, 175);
+            this.groupboxUpcoming.Padding = new System.Windows.Forms.Padding(4);
+            this.groupboxUpcoming.Size = new System.Drawing.Size(453, 219);
             this.groupboxUpcoming.TabIndex = 2;
             this.groupboxUpcoming.TabStop = false;
             this.groupboxUpcoming.Enter += new System.EventHandler(this.groupboxUpcoming_Enter);
@@ -160,18 +162,20 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(76, 77);
+            this.label8.Location = new System.Drawing.Point(101, 96);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(141, 20);
+            this.label8.Size = new System.Drawing.Size(192, 25);
             this.label8.TabIndex = 1;
             this.label8.Text = "All upcoming shifts";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 12);
+            this.label5.Location = new System.Drawing.Point(8, 15);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 20);
+            this.label5.Size = new System.Drawing.Size(168, 25);
             this.label5.TabIndex = 3;
             this.label5.Text = "Upcoming Shifts";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -181,18 +185,21 @@
             this.groupBox5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Controls.Add(this.groupboxStaffNeeds);
-            this.groupBox5.Location = new System.Drawing.Point(33, 142);
+            this.groupBox5.Location = new System.Drawing.Point(44, 178);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(352, 231);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Size = new System.Drawing.Size(469, 289);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 12);
+            this.label2.Location = new System.Drawing.Point(8, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 20);
+            this.label2.Size = new System.Drawing.Size(153, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Staffing Needs";
             // 
@@ -201,9 +208,11 @@
             this.groupboxStaffNeeds.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupboxStaffNeeds.Controls.Add(this.dataGridView2);
             this.groupboxStaffNeeds.Controls.Add(this.label7);
-            this.groupboxStaffNeeds.Location = new System.Drawing.Point(6, 35);
+            this.groupboxStaffNeeds.Location = new System.Drawing.Point(8, 44);
+            this.groupboxStaffNeeds.Margin = new System.Windows.Forms.Padding(4);
             this.groupboxStaffNeeds.Name = "groupboxStaffNeeds";
-            this.groupboxStaffNeeds.Size = new System.Drawing.Size(340, 175);
+            this.groupboxStaffNeeds.Padding = new System.Windows.Forms.Padding(4);
+            this.groupboxStaffNeeds.Size = new System.Drawing.Size(453, 219);
             this.groupboxStaffNeeds.TabIndex = 2;
             this.groupboxStaffNeeds.TabStop = false;
             // 
@@ -218,10 +227,11 @@
             this.dataGridViewTextBoxColumn8});
             this.dataGridView2.DataSource = this.shiftPickupsBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(340, 175);
+            this.dataGridView2.Size = new System.Drawing.Size(453, 219);
             this.dataGridView2.TabIndex = 11;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -270,37 +280,121 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 72);
+            this.label7.Location = new System.Drawing.Point(59, 90);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(187, 20);
+            this.label7.Size = new System.Drawing.Size(257, 25);
             this.label7.TabIndex = 0;
             this.label7.Text = "Shifts availabel to pick up";
             // 
             // groupboxRequests
             // 
             this.groupboxRequests.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupboxRequests.Controls.Add(this.dataGridView1);
+            this.groupboxRequests.Controls.Add(this.dataLeaveReqDASH);
             this.groupboxRequests.Controls.Add(this.label9);
             this.groupboxRequests.Controls.Add(this.label4);
-            this.groupboxRequests.Location = new System.Drawing.Point(33, 378);
+            this.groupboxRequests.Location = new System.Drawing.Point(44, 472);
+            this.groupboxRequests.Margin = new System.Windows.Forms.Padding(4);
             this.groupboxRequests.Name = "groupboxRequests";
-            this.groupboxRequests.Size = new System.Drawing.Size(722, 158);
+            this.groupboxRequests.Padding = new System.Windows.Forms.Padding(4);
+            this.groupboxRequests.Size = new System.Drawing.Size(963, 198);
             this.groupboxRequests.TabIndex = 8;
             this.groupboxRequests.TabStop = false;
             // 
-            // dataGridView1
+            // dataLeaveReqDASH
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.testDataSet10BindingSource1;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(716, 133);
-            this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataLeaveReqDASH.ColumnHeadersHeight = 46;
+            this.dataLeaveReqDASH.Location = new System.Drawing.Point(5, 41);
+            this.dataLeaveReqDASH.Name = "dataLeaveReqDASH";
+            this.dataLeaveReqDASH.RowHeadersWidth = 82;
+            this.dataLeaveReqDASH.Size = new System.Drawing.Size(956, 150);
+            this.dataLeaveReqDASH.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(388, 86);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(288, 25);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "approved and declined shifts";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 14);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(168, 25);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Leave Requests";
+            // 
+            // groupBreakdown
+            // 
+            this.groupBreakdown.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBreakdown.Controls.Add(this.label11);
+            this.groupBreakdown.Controls.Add(this.label6);
+            this.groupBreakdown.Location = new System.Drawing.Point(536, 31);
+            this.groupBreakdown.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBreakdown.Name = "groupBreakdown";
+            this.groupBreakdown.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBreakdown.Size = new System.Drawing.Size(469, 139);
+            this.groupBreakdown.TabIndex = 4;
+            this.groupBreakdown.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(-5, 98);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(497, 25);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "pilots ground and everything else percentages off?";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 15);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(236, 25);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Department Breakdown";
+            // 
+            // groupAvailableNeed
+            // 
+            this.groupAvailableNeed.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupAvailableNeed.Controls.Add(this.label10);
+            this.groupAvailableNeed.Controls.Add(this.label3);
+            this.groupAvailableNeed.Location = new System.Drawing.Point(44, 31);
+            this.groupAvailableNeed.Margin = new System.Windows.Forms.Padding(4);
+            this.groupAvailableNeed.Name = "groupAvailableNeed";
+            this.groupAvailableNeed.Padding = new System.Windows.Forms.Padding(4);
+            this.groupAvailableNeed.Size = new System.Drawing.Size(469, 139);
+            this.groupAvailableNeed.TabIndex = 0;
+            this.groupAvailableNeed.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(141, 56);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 25);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "IDK yet";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(165, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Available needs";
             // 
             // leaveRequestsBindingSource
             // 
@@ -311,82 +405,6 @@
             // 
             this.testDataSet.DataSetName = "TestDataSet";
             this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(291, 69);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(211, 20);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "approved and declined shifts";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Leave Requests";
-            // 
-            // groupBreakdown
-            // 
-            this.groupBreakdown.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBreakdown.Controls.Add(this.label11);
-            this.groupBreakdown.Controls.Add(this.label6);
-            this.groupBreakdown.Location = new System.Drawing.Point(402, 25);
-            this.groupBreakdown.Name = "groupBreakdown";
-            this.groupBreakdown.Size = new System.Drawing.Size(352, 111);
-            this.groupBreakdown.TabIndex = 4;
-            this.groupBreakdown.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(-4, 78);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(365, 20);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "pilots ground and everything else percentages off?";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(178, 20);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Department Breakdown";
-            // 
-            // groupAvailableNeed
-            // 
-            this.groupAvailableNeed.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupAvailableNeed.Controls.Add(this.label10);
-            this.groupAvailableNeed.Controls.Add(this.label3);
-            this.groupAvailableNeed.Location = new System.Drawing.Point(33, 25);
-            this.groupAvailableNeed.Name = "groupAvailableNeed";
-            this.groupAvailableNeed.Size = new System.Drawing.Size(352, 111);
-            this.groupAvailableNeed.TabIndex = 0;
-            this.groupAvailableNeed.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(106, 45);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 20);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "IDK yet";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Available needs";
             // 
             // analyticsBindingSource
             // 
@@ -401,17 +419,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 29);
+            this.label1.Location = new System.Drawing.Point(67, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
+            this.label1.Size = new System.Drawing.Size(150, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Quick Actions:";
             // 
             // btnChatbot
             // 
-            this.btnChatbot.Location = new System.Drawing.Point(554, 31);
+            this.btnChatbot.Location = new System.Drawing.Point(739, 39);
+            this.btnChatbot.Margin = new System.Windows.Forms.Padding(4);
             this.btnChatbot.Name = "btnChatbot";
-            this.btnChatbot.Size = new System.Drawing.Size(237, 32);
+            this.btnChatbot.Size = new System.Drawing.Size(316, 40);
             this.btnChatbot.TabIndex = 3;
             this.btnChatbot.Text = "Shift Managment Chatbot";
             this.btnChatbot.UseVisualStyleBackColor = true;
@@ -419,9 +439,10 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(861, 317);
+            this.btnClear.Location = new System.Drawing.Point(1148, 396);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(99, 115);
+            this.btnClear.Size = new System.Drawing.Size(132, 144);
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -429,9 +450,10 @@
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(861, 445);
+            this.btnAdmin.Location = new System.Drawing.Point(1148, 556);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(99, 115);
+            this.btnAdmin.Size = new System.Drawing.Size(132, 144);
             this.btnAdmin.TabIndex = 6;
             this.btnAdmin.Text = "Admin";
             this.btnAdmin.UseVisualStyleBackColor = true;
@@ -505,32 +527,18 @@
             // 
             this.analyticsTableAdapter.ClearBeforeFill = true;
             // 
-            // testDataSet10
-            // 
-            this.testDataSet10.DataSetName = "TestDataSet10";
-            this.testDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // testDataSet10BindingSource
-            // 
-            this.testDataSet10BindingSource.DataSource = this.testDataSet10;
-            this.testDataSet10BindingSource.Position = 0;
-            // 
-            // testDataSet10BindingSource1
-            // 
-            this.testDataSet10BindingSource1.DataSource = this.testDataSet10;
-            this.testDataSet10BindingSource1.Position = 0;
-            // 
             // EmployeeDash
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 625);
+            this.ClientSize = new System.Drawing.Size(1397, 781);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnChatbot);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeDash";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.EmployeeDash_Load);
@@ -548,13 +556,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).EndInit();
             this.groupboxRequests.ResumeLayout(false);
             this.groupboxRequests.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataLeaveReqDASH)).EndInit();
             this.groupBreakdown.ResumeLayout(false);
             this.groupBreakdown.PerformLayout();
             this.groupAvailableNeed.ResumeLayout(false);
             this.groupAvailableNeed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.analyticsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet2)).EndInit();
@@ -563,9 +571,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet10BindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -597,7 +602,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAdmin;
         private LNBrootDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataLeaveReqDASH;
         private TestDataSet testDataSet;
         private System.Windows.Forms.BindingSource leaveRequestsBindingSource;
         private TestDataSetTableAdapters.LeaveRequestsTableAdapter leaveRequestsTableAdapter;
@@ -621,9 +626,12 @@
         private TestDataSet8 testDataSet8;
         private System.Windows.Forms.BindingSource analyticsBindingSource;
         private TestDataSet8TableAdapters.AnalyticsTableAdapter analyticsTableAdapter;
-        private System.Windows.Forms.BindingSource testDataSet10BindingSource1;
-        private TestDataSet10 testDataSet10;
-        private System.Windows.Forms.BindingSource testDataSet10BindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enddateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reasonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
     }
 }
 

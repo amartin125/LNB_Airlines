@@ -78,7 +78,7 @@ namespace LNB_Airlines
             return employeeId;
         }
 
-        // Method to retrieve all leave requests
+        // Method to retrieve all leave requests for ADMIN
         public static DataTable GetLeaveRequests()
         {
             DataTable leaveRequests = new DataTable();
@@ -93,6 +93,31 @@ namespace LNB_Airlines
             }
             return leaveRequests;
         }
+
+        // Method to retrieve leave requests for a specific employee
+        public static DataTable GetLeaveRequestsDASH(int employeeId)
+        {
+            DataTable dataLeaveReqDASH = new DataTable();
+            using (SqlConnection connection = ConnectToDatabase())
+            {
+                string query = "SELECT leave_id, employee_id, start_date, end_date, reason, status FROM LeaveRequests WHERE employee_id = @EmployeeId";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@EmployeeId", employeeId);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataLeaveReqDASH);
+                    }
+                }
+            }
+            return dataLeaveReqDASH;
+        }
+
+
+
+
+
+
 
         // Method to update leave request status and reason
         public static void UpdateLeaveRequestStatus(int leaveId, string status, string reason)

@@ -13,22 +13,60 @@ namespace LNB_Airlines
 {
     public partial class EmployeeDash : Form
     {
-        private int employeeId;
         private string connectionString = "Server=DESKTOP-VEH3C8M\\SQLEXPRESS01;Database=Test;Integrated Security=True;";
+        private int _employeeId;
 
-            
-                
+
 
 
         // Constructor that accepts an int parameter for employee ID
         public EmployeeDash(int employeeId)
         {
             InitializeComponent();
-            this.employeeId = employeeId;
-            // Load data for the specific employee
-            LoadEmployeeData();
+            _employeeId = employeeId;
+        }
+        private void EmployeeDash_Load(object sender, EventArgs e)
+        {
+            LoadEmployeeLeaveRequests();
         }
 
+        // Method to load employee-specific leave requests
+        private void LoadEmployeeLeaveRequests()
+        {
+            DataTable leaveRequests = DatabaseConnection.GetLeaveRequestsDASH(_employeeId);
+            dataLeaveReqDASH.DataSource = leaveRequests; // Assuming dataLeaveReq is the correct DataGridView
+        }
+        // Method to load employee-specific data
+        private void LoadEmployeeData()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM Employees WHERE employee_id = @EmployeeId";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@EmployeeId", _employeeId);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dataLeaveReqDASH.DataSource = dt; // Ensure this is the correct DataGridView for employee data
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading employee data: " + ex.Message);
+            }
+        }
+
+        private void btnChatbot_Click(object sender, EventArgs e)
+        {
+            Chatbot chatbot = new Chatbot();
+            chatbot.Show();
+            this.Hide();
+        }
         // Default constructor
         public EmployeeDash()
         {
@@ -91,12 +129,7 @@ namespace LNB_Airlines
             }
         }
 
-        private void btnChatbot_Click(object sender, EventArgs e)
-        {
-            Chatbot chatbot = new Chatbot();
-            chatbot.Show();
-            this.Hide();
-        }
+       
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -115,21 +148,7 @@ namespace LNB_Airlines
             admin.Show();
         }
 
-        private void EmployeeDash_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'testDataSet8.Analytics' table. You can move, or remove it, as needed.
-            this.analyticsTableAdapter.Fill(this.testDataSet8.Analytics);
-            // TODO: This line of code loads data into the 'testDataSet6.Employees' table. You can move, or remove it, as needed.
-            this.employeesTableAdapter1.Fill(this.testDataSet6.Employees);
-            // TODO: This line of code loads data into the 'testDataSet5.Employees' table. You can move, or remove it, as needed.
-            this.employeesTableAdapter.Fill(this.testDataSet5.Employees);
-            // TODO: This line of code loads data into the 'testDataSet2.Shifts' table. You can move, or remove it, as needed.
-            this.shiftsTableAdapter.Fill(this.testDataSet2.Shifts);
-            // TODO: This line of code loads data into the 'testDataSet1.ShiftPickups' table. You can move, or remove it, as needed.
-            this.shiftPickupsTableAdapter.Fill(this.testDataSet1.ShiftPickups);
-            // TODO: This line of code loads data into the 'testDataSet.LeaveRequests' table. You can move, or remove it, as needed.
-            this.leaveRequestsTableAdapter.Fill(this.testDataSet.LeaveRequests);
-        }
+        
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -141,29 +160,6 @@ namespace LNB_Airlines
             LoadEmployeeData();
         }
 
-        private void LoadEmployeeData()
-        {
-            try
-            {
-                MessageBox.Show($"Using connection string: {connectionString}");
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = "SELECT * FROM Employees WHERE employee_id = @EmployeeId";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@EmployeeId", employeeId);
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    dataGridView1.DataSource = dt;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading employee data: " + ex.Message);
-            }
-        }
+       
     }
 }
