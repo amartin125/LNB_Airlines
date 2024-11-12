@@ -48,8 +48,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupboxRequests = new System.Windows.Forms.GroupBox();
             this.dataLeaveReqDASH = new System.Windows.Forms.DataGridView();
-            this.leaveRequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet = new LNB_Airlines.TestDataSet();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBreakdown = new System.Windows.Forms.GroupBox();
@@ -58,6 +56,8 @@
             this.groupAvailableNeed = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.leaveRequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet = new LNB_Airlines.TestDataSet();
             this.analyticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet8 = new LNB_Airlines.TestDataSet8();
             this.label1 = new System.Windows.Forms.Label();
@@ -77,7 +77,6 @@
             this.employeesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter1 = new LNB_Airlines.TestDataSet6TableAdapters.EmployeesTableAdapter();
             this.analyticsTableAdapter = new LNB_Airlines.TestDataSet8TableAdapters.AnalyticsTableAdapter();
-            
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupboxUpcoming.SuspendLayout();
@@ -88,10 +87,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).BeginInit();
             this.groupboxRequests.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLeaveReqDASH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             this.groupBreakdown.SuspendLayout();
             this.groupAvailableNeed.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.analyticsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet2)).BeginInit();
@@ -100,7 +99,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).BeginInit();
-            
             this.SuspendLayout();
             // 
             // groupBox1
@@ -109,9 +107,9 @@
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(3, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1613, 31);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -127,9 +125,9 @@
             this.groupBox2.Controls.Add(this.groupBreakdown);
             this.groupBox2.Controls.Add(this.groupAvailableNeed);
             this.groupBox2.Location = new System.Drawing.Point(3, 85);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1052, 672);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -141,9 +139,9 @@
             this.groupBox6.Controls.Add(this.groupboxUpcoming);
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.Location = new System.Drawing.Point(536, 178);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox6.Size = new System.Drawing.Size(469, 289);
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
@@ -153,9 +151,9 @@
             this.groupboxUpcoming.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupboxUpcoming.Controls.Add(this.label8);
             this.groupboxUpcoming.Location = new System.Drawing.Point(8, 44);
-            this.groupboxUpcoming.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupboxUpcoming.Margin = new System.Windows.Forms.Padding(4);
             this.groupboxUpcoming.Name = "groupboxUpcoming";
-            this.groupboxUpcoming.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupboxUpcoming.Padding = new System.Windows.Forms.Padding(4);
             this.groupboxUpcoming.Size = new System.Drawing.Size(453, 219);
             this.groupboxUpcoming.TabIndex = 2;
             this.groupboxUpcoming.TabStop = false;
@@ -188,9 +186,9 @@
             this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Controls.Add(this.groupboxStaffNeeds);
             this.groupBox5.Location = new System.Drawing.Point(44, 178);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox5.Size = new System.Drawing.Size(469, 289);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
@@ -211,9 +209,9 @@
             this.groupboxStaffNeeds.Controls.Add(this.dataGridView2);
             this.groupboxStaffNeeds.Controls.Add(this.label7);
             this.groupboxStaffNeeds.Location = new System.Drawing.Point(8, 44);
-            this.groupboxStaffNeeds.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupboxStaffNeeds.Margin = new System.Windows.Forms.Padding(4);
             this.groupboxStaffNeeds.Name = "groupboxStaffNeeds";
-            this.groupboxStaffNeeds.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupboxStaffNeeds.Padding = new System.Windows.Forms.Padding(4);
             this.groupboxStaffNeeds.Size = new System.Drawing.Size(453, 219);
             this.groupboxStaffNeeds.TabIndex = 2;
             this.groupboxStaffNeeds.TabStop = false;
@@ -229,7 +227,7 @@
             this.dataGridViewTextBoxColumn8});
             this.dataGridView2.DataSource = this.shiftPickupsBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
@@ -296,75 +294,21 @@
             this.groupboxRequests.Controls.Add(this.label9);
             this.groupboxRequests.Controls.Add(this.label4);
             this.groupboxRequests.Location = new System.Drawing.Point(44, 472);
-            this.groupboxRequests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupboxRequests.Margin = new System.Windows.Forms.Padding(4);
             this.groupboxRequests.Name = "groupboxRequests";
-            this.groupboxRequests.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupboxRequests.Padding = new System.Windows.Forms.Padding(4);
             this.groupboxRequests.Size = new System.Drawing.Size(963, 198);
             this.groupboxRequests.TabIndex = 8;
             this.groupboxRequests.TabStop = false;
             // 
-            // dataGridView1
+            // dataLeaveReqDASH
             // 
-            
-            
-            // 
-            // startdateDataGridViewTextBoxColumn
-            // 
-            this.startdateDataGridViewTextBoxColumn.DataPropertyName = "start_date";
-            this.startdateDataGridViewTextBoxColumn.HeaderText = "start_date";
-            this.startdateDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.startdateDataGridViewTextBoxColumn.Name = "startdateDataGridViewTextBoxColumn";
-            this.startdateDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // enddateDataGridViewTextBoxColumn
-            // 
-            this.enddateDataGridViewTextBoxColumn.DataPropertyName = "end_date";
-            this.enddateDataGridViewTextBoxColumn.HeaderText = "end_date";
-            this.enddateDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.enddateDataGridViewTextBoxColumn.Name = "enddateDataGridViewTextBoxColumn";
-            this.enddateDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // reasonDataGridViewTextBoxColumn
-            // 
-            this.reasonDataGridViewTextBoxColumn.DataPropertyName = "reason";
-            this.reasonDataGridViewTextBoxColumn.HeaderText = "reason";
-            this.reasonDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.reasonDataGridViewTextBoxColumn.Name = "reasonDataGridViewTextBoxColumn";
-            this.reasonDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // createdatDataGridViewTextBoxColumn
-            // 
-            this.createdatDataGridViewTextBoxColumn.DataPropertyName = "created_at";
-            this.createdatDataGridViewTextBoxColumn.HeaderText = "created_at";
-            this.createdatDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.createdatDataGridViewTextBoxColumn.Name = "createdatDataGridViewTextBoxColumn";
-            this.createdatDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // updatedatDataGridViewTextBoxColumn
-            // 
-            this.updatedatDataGridViewTextBoxColumn.DataPropertyName = "updated_at";
-            this.updatedatDataGridViewTextBoxColumn.HeaderText = "updated_at";
-            this.updatedatDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.updatedatDataGridViewTextBoxColumn.Name = "updatedatDataGridViewTextBoxColumn";
-            this.updatedatDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // leaveRequestsBindingSource
-            // 
-            this.leaveRequestsBindingSource.DataMember = "LeaveRequests";
-            this.leaveRequestsBindingSource.DataSource = this.testDataSet;
-            // 
-            // testDataSet
-            // 
-            this.testDataSet.DataSetName = "TestDataSet";
-            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataLeaveReqDASH.ColumnHeadersHeight = 46;
+            this.dataLeaveReqDASH.Location = new System.Drawing.Point(5, 41);
+            this.dataLeaveReqDASH.Name = "dataLeaveReqDASH";
+            this.dataLeaveReqDASH.RowHeadersWidth = 82;
+            this.dataLeaveReqDASH.Size = new System.Drawing.Size(956, 150);
+            this.dataLeaveReqDASH.TabIndex = 0;
             // 
             // label9
             // 
@@ -392,9 +336,9 @@
             this.groupBreakdown.Controls.Add(this.label11);
             this.groupBreakdown.Controls.Add(this.label6);
             this.groupBreakdown.Location = new System.Drawing.Point(536, 31);
-            this.groupBreakdown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBreakdown.Margin = new System.Windows.Forms.Padding(4);
             this.groupBreakdown.Name = "groupBreakdown";
-            this.groupBreakdown.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBreakdown.Padding = new System.Windows.Forms.Padding(4);
             this.groupBreakdown.Size = new System.Drawing.Size(469, 139);
             this.groupBreakdown.TabIndex = 4;
             this.groupBreakdown.TabStop = false;
@@ -425,9 +369,9 @@
             this.groupAvailableNeed.Controls.Add(this.label10);
             this.groupAvailableNeed.Controls.Add(this.label3);
             this.groupAvailableNeed.Location = new System.Drawing.Point(44, 31);
-            this.groupAvailableNeed.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupAvailableNeed.Margin = new System.Windows.Forms.Padding(4);
             this.groupAvailableNeed.Name = "groupAvailableNeed";
-            this.groupAvailableNeed.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupAvailableNeed.Padding = new System.Windows.Forms.Padding(4);
             this.groupAvailableNeed.Size = new System.Drawing.Size(469, 139);
             this.groupAvailableNeed.TabIndex = 0;
             this.groupAvailableNeed.TabStop = false;
@@ -452,6 +396,16 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Available needs";
             // 
+            // leaveRequestsBindingSource
+            // 
+            this.leaveRequestsBindingSource.DataMember = "LeaveRequests";
+            this.leaveRequestsBindingSource.DataSource = this.testDataSet;
+            // 
+            // testDataSet
+            // 
+            this.testDataSet.DataSetName = "TestDataSet";
+            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // analyticsBindingSource
             // 
             this.analyticsBindingSource.DataMember = "Analytics";
@@ -475,7 +429,7 @@
             // btnChatbot
             // 
             this.btnChatbot.Location = new System.Drawing.Point(739, 39);
-            this.btnChatbot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChatbot.Margin = new System.Windows.Forms.Padding(4);
             this.btnChatbot.Name = "btnChatbot";
             this.btnChatbot.Size = new System.Drawing.Size(316, 40);
             this.btnChatbot.TabIndex = 3;
@@ -486,7 +440,7 @@
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(1148, 396);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(132, 144);
             this.btnClear.TabIndex = 5;
@@ -497,7 +451,7 @@
             // btnAdmin
             // 
             this.btnAdmin.Location = new System.Drawing.Point(1148, 556);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdmin.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(132, 144);
             this.btnAdmin.TabIndex = 6;
@@ -573,14 +527,6 @@
             // 
             this.analyticsTableAdapter.ClearBeforeFill = true;
             // 
-            // testDataSet10
-            // 
-            
-            // 
-            // testDataSet10BindingSource
-            // 
-           
-            // 
             // EmployeeDash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -592,7 +538,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeDash";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.EmployeeDash_Load);
@@ -611,12 +557,12 @@
             this.groupboxRequests.ResumeLayout(false);
             this.groupboxRequests.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLeaveReqDASH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             this.groupBreakdown.ResumeLayout(false);
             this.groupBreakdown.PerformLayout();
             this.groupAvailableNeed.ResumeLayout(false);
             this.groupAvailableNeed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.analyticsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet2)).EndInit();
@@ -625,7 +571,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).EndInit();
-          
             this.ResumeLayout(false);
             this.PerformLayout();
 
