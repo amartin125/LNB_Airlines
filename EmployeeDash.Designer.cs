@@ -57,7 +57,6 @@
             this.testDataSet8 = new LNB_Airlines.TestDataSet8();
             this.label1 = new System.Windows.Forms.Label();
             this.btnChatbot = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.leaveRequestsTableAdapter = new LNB_Airlines.TestDataSetTableAdapters.LeaveRequestsTableAdapter();
             this.tableAdapterManager1 = new LNB_Airlines.LNBrootDataSetTableAdapters.TableAdapterManager();
@@ -88,6 +87,7 @@
             this.shift_time_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shift_time_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shift_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupboxUpcoming.SuspendLayout();
@@ -116,6 +116,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -330,6 +331,7 @@
             // groupAvailableNeed
             // 
             this.groupAvailableNeed.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupAvailableNeed.Controls.Add(this.dataGridView4);
             this.groupAvailableNeed.Controls.Add(this.label3);
             this.groupAvailableNeed.Location = new System.Drawing.Point(33, 25);
             this.groupAvailableNeed.Name = "groupAvailableNeed";
@@ -385,19 +387,9 @@
             this.btnChatbot.UseVisualStyleBackColor = true;
             this.btnChatbot.Click += new System.EventHandler(this.btnChatbot_Click);
             // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(861, 317);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(99, 115);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(861, 445);
+            this.btnAdmin.Location = new System.Drawing.Point(852, 301);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(99, 115);
             this.btnAdmin.TabIndex = 6;
@@ -602,6 +594,19 @@
             this.shift_date.Name = "shift_date";
             this.shift_date.Width = 150;
             // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.DataSource = this.rolesBindingSource;
+            this.dataGridView4.Location = new System.Drawing.Point(0, 35);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowHeadersWidth = 62;
+            this.dataGridView4.RowTemplate.Height = 28;
+            this.dataGridView4.Size = new System.Drawing.Size(352, 125);
+            this.dataGridView4.TabIndex = 35;
+            // 
             // EmployeeDash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -609,7 +614,6 @@
             this.ClientSize = new System.Drawing.Size(1077, 776);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnAdmin);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnChatbot);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -652,6 +656,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -679,7 +684,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAdmin;
         private LNBrootDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.DataGridView dataLeaveReqDASH;
@@ -724,6 +728,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn shift_time_start;
         private System.Windows.Forms.DataGridViewTextBoxColumn shift_time_end;
         private System.Windows.Forms.DataGridViewTextBoxColumn shift_date;
+        private System.Windows.Forms.DataGridView dataGridView4;
     }
 }
 

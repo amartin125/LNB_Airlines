@@ -61,10 +61,6 @@ using System.Windows.Forms;
                 {
                     return "Hello! How can I assist you with your shifts at LNB Airlines today?";
                 }
-                else if (userInput.Contains("hi"))
-                {
-                    return "Hello! How can I assist you with your shifts at LNB Airlines today?";
-                }
                 else if (userInput.Contains("bye"))
                 {
                     return "Goodbye! Have a nice day!";
@@ -134,6 +130,14 @@ using System.Windows.Forms;
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int defaultUserId = 1; // Replace with an appropriate default user ID
+            this.Hide();
+            EmployeeDash emp = new EmployeeDash(defaultUserId);
+            emp.Show();
         }
     }
 

@@ -146,7 +146,7 @@ namespace LNB_Airlines
 
         private void btnMain_Click(object sender, EventArgs e)
         {
-            int defaultUserId = 0; // Replace with an appropriate default user ID
+            int defaultUserId = 1; // Replace with an appropriate default user ID
             this.Hide();
             EmployeeDash emp = new EmployeeDash(defaultUserId);
             emp.Show();
