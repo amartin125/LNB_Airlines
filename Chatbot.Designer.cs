@@ -64,6 +64,7 @@
             this.rtbChatHistory.Size = new System.Drawing.Size(723, 459);
             this.rtbChatHistory.TabIndex = 2;
             this.rtbChatHistory.Text = "";
+            this.rtbChatHistory.TextChanged += new System.EventHandler(this.rtbChatHistory_TextChanged);
             // 
             // label1
             // 
