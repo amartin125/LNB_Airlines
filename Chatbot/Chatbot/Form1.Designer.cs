@@ -62,7 +62,7 @@ namespace Chatbot
             // 
             // rtbChatHistory
             // 
-            this.rtbChatHistory.Location = new System.Drawing.Point(323, 12);
+            this.rtbChatHistory.Location = new System.Drawing.Point(323, 21);
             this.rtbChatHistory.Name = "rtbChatHistory";
             this.rtbChatHistory.ReadOnly = true;
             this.rtbChatHistory.Size = new System.Drawing.Size(192, 160);
