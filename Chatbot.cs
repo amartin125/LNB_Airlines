@@ -51,8 +51,11 @@ using System.Windows.Forms;
         {
                 userInput = userInput.ToLower(); // Simplify input processing
 
-
-                else if (userInput.Contains("pick up"))
+                if (userInput.Contains("pick up"))
+                {
+                    return PickUpShift(userInput);
+                }
+                if (userInput.Contains("pick up"))
                 {
                     return PickUpShift(userInput);
                 }
