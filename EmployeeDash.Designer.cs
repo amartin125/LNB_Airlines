@@ -39,30 +39,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupboxStaffNeeds = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pickup_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shiftPickupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testDataSet1 = new LNB_Airlines.TestDataSet1();
             this.label7 = new System.Windows.Forms.Label();
             this.groupboxRequests = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.leaveRequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet = new LNB_Airlines.TestDataSet();
+            this.dataLeaveReqDASH = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBreakdown = new System.Windows.Forms.GroupBox();
-            this.analyticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet8 = new LNB_Airlines.TestDataSet8();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupAvailableNeed = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.leaveRequestsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet = new LNB_Airlines.TestDataSet();
+            this.analyticsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet8 = new LNB_Airlines.TestDataSet8();
             this.label1 = new System.Windows.Forms.Label();
             this.btnChatbot = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.leaveRequestsTableAdapter = new LNB_Airlines.TestDataSetTableAdapters.LeaveRequestsTableAdapter();
             this.tableAdapterManager1 = new LNB_Airlines.LNBrootDataSetTableAdapters.TableAdapterManager();
@@ -77,9 +71,23 @@
             this.employeesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter1 = new LNB_Airlines.TestDataSet6TableAdapters.EmployeesTableAdapter();
             this.analyticsTableAdapter = new LNB_Airlines.TestDataSet8TableAdapters.AnalyticsTableAdapter();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employee_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.testDataSet11 = new LNB_Airlines.TestDataSet11();
+            this.shiftsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.shiftsTableAdapter1 = new LNB_Airlines.TestDataSet11TableAdapters.ShiftsTableAdapter();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.testDataSet13 = new LNB_Airlines.TestDataSet13();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new LNB_Airlines.TestDataSet13TableAdapters.RolesTableAdapter();
+            this.role_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shift_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.created_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updated_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shift_time_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shift_time_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shift_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupboxUpcoming.SuspendLayout();
@@ -89,19 +97,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.shiftPickupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).BeginInit();
             this.groupboxRequests.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataLeaveReqDASH)).BeginInit();
+            this.groupBreakdown.SuspendLayout();
+            this.groupAvailableNeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
-            this.groupBreakdown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.analyticsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet8)).BeginInit();
-            this.groupAvailableNeed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -127,7 +142,7 @@
             this.groupBox2.Controls.Add(this.groupAvailableNeed);
             this.groupBox2.Location = new System.Drawing.Point(2, 68);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(789, 538);
+            this.groupBox2.Size = new System.Drawing.Size(778, 673);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -137,7 +152,7 @@
             this.groupBox6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox6.Controls.Add(this.groupboxUpcoming);
             this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Location = new System.Drawing.Point(402, 142);
+            this.groupBox6.Location = new System.Drawing.Point(402, 198);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(352, 231);
             this.groupBox6.TabIndex = 10;
@@ -146,6 +161,7 @@
             // groupboxUpcoming
             // 
             this.groupboxUpcoming.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupboxUpcoming.Controls.Add(this.dataGridView1);
             this.groupboxUpcoming.Controls.Add(this.label8);
             this.groupboxUpcoming.Location = new System.Drawing.Point(6, 35);
             this.groupboxUpcoming.Name = "groupboxUpcoming";
@@ -178,7 +194,7 @@
             this.groupBox5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Controls.Add(this.groupboxStaffNeeds);
-            this.groupBox5.Location = new System.Drawing.Point(33, 142);
+            this.groupBox5.Location = new System.Drawing.Point(33, 198);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(352, 231);
             this.groupBox5.TabIndex = 9;
@@ -209,50 +225,18 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.pickup_status,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
+            this.shift_id,
+            this.created_at,
+            this.updated_at});
             this.dataGridView2.DataSource = this.shiftPickupsBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Location = new System.Drawing.Point(-6, 0);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
             this.dataGridView2.Size = new System.Drawing.Size(340, 175);
             this.dataGridView2.TabIndex = 11;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "employee_id";
-            this.dataGridViewTextBoxColumn2.HeaderText = "employee_id";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // pickup_status
-            // 
-            this.pickup_status.DataPropertyName = "pickup_status";
-            this.pickup_status.HeaderText = "pickup_status";
-            this.pickup_status.MinimumWidth = 8;
-            this.pickup_status.Name = "pickup_status";
-            this.pickup_status.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "created_at";
-            this.dataGridViewTextBoxColumn7.HeaderText = "created_at";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "updated_at";
-            this.dataGridViewTextBoxColumn8.HeaderText = "updated_at";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 150;
             // 
             // shiftPickupsBindingSource
             // 
@@ -276,41 +260,25 @@
             // groupboxRequests
             // 
             this.groupboxRequests.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupboxRequests.Controls.Add(this.dataGridView1);
+            this.groupboxRequests.Controls.Add(this.dataLeaveReqDASH);
             this.groupboxRequests.Controls.Add(this.label9);
             this.groupboxRequests.Controls.Add(this.label4);
-            this.groupboxRequests.Location = new System.Drawing.Point(33, 378);
+            this.groupboxRequests.Location = new System.Drawing.Point(33, 435);
             this.groupboxRequests.Name = "groupboxRequests";
-            this.groupboxRequests.Size = new System.Drawing.Size(722, 158);
+            this.groupboxRequests.Size = new System.Drawing.Size(730, 232);
             this.groupboxRequests.TabIndex = 8;
             this.groupboxRequests.TabStop = false;
             // 
-            // dataGridView1
+            // dataLeaveReqDASH
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.employee_id,
-            this.reason});
-            this.dataGridView1.DataSource = this.leaveRequestsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 34);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(721, 138);
-            this.dataGridView1.TabIndex = 6;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // leaveRequestsBindingSource
-            // 
-            this.leaveRequestsBindingSource.DataMember = "LeaveRequests";
-            this.leaveRequestsBindingSource.DataSource = this.testDataSet;
-            // 
-            // testDataSet
-            // 
-            this.testDataSet.DataSetName = "TestDataSet";
-            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataLeaveReqDASH.ColumnHeadersHeight = 46;
+            this.dataLeaveReqDASH.Location = new System.Drawing.Point(8, 33);
+            this.dataLeaveReqDASH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataLeaveReqDASH.Name = "dataLeaveReqDASH";
+            this.dataLeaveReqDASH.RowHeadersWidth = 82;
+            this.dataLeaveReqDASH.Size = new System.Drawing.Size(717, 194);
+            this.dataLeaveReqDASH.TabIndex = 0;
+            this.dataLeaveReqDASH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataLeaveReqDASH_CellContentClick);
             // 
             // label9
             // 
@@ -333,23 +301,14 @@
             // groupBreakdown
             // 
             this.groupBreakdown.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBreakdown.Controls.Add(this.dataGridView3);
             this.groupBreakdown.Controls.Add(this.label11);
             this.groupBreakdown.Controls.Add(this.label6);
             this.groupBreakdown.Location = new System.Drawing.Point(402, 25);
             this.groupBreakdown.Name = "groupBreakdown";
-            this.groupBreakdown.Size = new System.Drawing.Size(352, 111);
+            this.groupBreakdown.Size = new System.Drawing.Size(352, 160);
             this.groupBreakdown.TabIndex = 4;
             this.groupBreakdown.TabStop = false;
-            // 
-            // analyticsBindingSource
-            // 
-            this.analyticsBindingSource.DataMember = "Analytics";
-            this.analyticsBindingSource.DataSource = this.testDataSet8;
-            // 
-            // testDataSet8
-            // 
-            this.testDataSet8.DataSetName = "TestDataSet8";
-            this.testDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label11
             // 
@@ -372,36 +331,47 @@
             // groupAvailableNeed
             // 
             this.groupAvailableNeed.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupAvailableNeed.Controls.Add(this.label10);
+            this.groupAvailableNeed.Controls.Add(this.dataGridView4);
             this.groupAvailableNeed.Controls.Add(this.label3);
             this.groupAvailableNeed.Location = new System.Drawing.Point(33, 25);
             this.groupAvailableNeed.Name = "groupAvailableNeed";
-            this.groupAvailableNeed.Size = new System.Drawing.Size(352, 111);
+            this.groupAvailableNeed.Size = new System.Drawing.Size(352, 160);
             this.groupAvailableNeed.TabIndex = 0;
             this.groupAvailableNeed.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(106, 45);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 20);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "IDK yet";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 20);
+            this.label3.Size = new System.Drawing.Size(70, 20);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Available needs";
+            this.label3.Text = "Updates";
+            // 
+            // leaveRequestsBindingSource
+            // 
+            this.leaveRequestsBindingSource.DataMember = "LeaveRequests";
+            this.leaveRequestsBindingSource.DataSource = this.testDataSet;
+            // 
+            // testDataSet
+            // 
+            this.testDataSet.DataSetName = "TestDataSet";
+            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // analyticsBindingSource
+            // 
+            this.analyticsBindingSource.DataMember = "Analytics";
+            this.analyticsBindingSource.DataSource = this.testDataSet8;
+            // 
+            // testDataSet8
+            // 
+            this.testDataSet8.DataSetName = "TestDataSet8";
+            this.testDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 29);
+            this.label1.Location = new System.Drawing.Point(46, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 20);
             this.label1.TabIndex = 2;
@@ -417,19 +387,9 @@
             this.btnChatbot.UseVisualStyleBackColor = true;
             this.btnChatbot.Click += new System.EventHandler(this.btnChatbot_Click);
             // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(861, 317);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(99, 115);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(861, 445);
+            this.btnAdmin.Location = new System.Drawing.Point(852, 301);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(99, 115);
             this.btnAdmin.TabIndex = 6;
@@ -505,38 +465,155 @@
             // 
             this.analyticsTableAdapter.ClearBeforeFill = true;
             // 
-            // Column1
+            // label12
             // 
-            this.Column1.DataPropertyName = "leave_id";
-            this.Column1.HeaderText = "Column1";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(857, 276);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 20);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "Testing";
             // 
-            // employee_id
+            // dataGridView1
             // 
-            this.employee_id.DataPropertyName = "employee_id";
-            this.employee_id.HeaderText = "employee_id";
-            this.employee_id.MinimumWidth = 8;
-            this.employee_id.Name = "employee_id";
-            this.employee_id.Width = 150;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.shift_time_start,
+            this.shift_time_end,
+            this.shift_date});
+            this.dataGridView1.DataSource = this.shiftsBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(340, 175);
+            this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
-            // reason
+            // testDataSet11
             // 
-            this.reason.DataPropertyName = "reason";
-            this.reason.HeaderText = "reason";
-            this.reason.MinimumWidth = 8;
-            this.reason.Name = "reason";
-            this.reason.Width = 150;
+            this.testDataSet11.DataSetName = "TestDataSet11";
+            this.testDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // shiftsBindingSource1
+            // 
+            this.shiftsBindingSource1.DataMember = "Shifts";
+            this.shiftsBindingSource1.DataSource = this.testDataSet11;
+            // 
+            // shiftsTableAdapter1
+            // 
+            this.shiftsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.role_name});
+            this.dataGridView3.DataSource = this.rolesBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 35);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.RowTemplate.Height = 28;
+            this.dataGridView3.Size = new System.Drawing.Size(352, 125);
+            this.dataGridView3.TabIndex = 34;
+            // 
+            // testDataSet13
+            // 
+            this.testDataSet13.DataSetName = "TestDataSet13";
+            this.testDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "Roles";
+            this.rolesBindingSource.DataSource = this.testDataSet13;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // role_name
+            // 
+            this.role_name.DataPropertyName = "role_name";
+            this.role_name.HeaderText = "Role";
+            this.role_name.MinimumWidth = 8;
+            this.role_name.Name = "role_name";
+            this.role_name.ReadOnly = true;
+            this.role_name.Width = 150;
+            // 
+            // shift_id
+            // 
+            this.shift_id.DataPropertyName = "shift_id";
+            this.shift_id.HeaderText = "Shift ID";
+            this.shift_id.MinimumWidth = 8;
+            this.shift_id.Name = "shift_id";
+            this.shift_id.ReadOnly = true;
+            this.shift_id.Width = 150;
+            // 
+            // created_at
+            // 
+            this.created_at.DataPropertyName = "created_at";
+            this.created_at.HeaderText = "Created";
+            this.created_at.MinimumWidth = 8;
+            this.created_at.Name = "created_at";
+            this.created_at.ReadOnly = true;
+            this.created_at.Width = 150;
+            // 
+            // updated_at
+            // 
+            this.updated_at.DataPropertyName = "updated_at";
+            this.updated_at.HeaderText = "Updated";
+            this.updated_at.MinimumWidth = 8;
+            this.updated_at.Name = "updated_at";
+            this.updated_at.ReadOnly = true;
+            this.updated_at.Width = 150;
+            // 
+            // shift_time_start
+            // 
+            this.shift_time_start.DataPropertyName = "shift_time_start";
+            this.shift_time_start.HeaderText = "Shift start";
+            this.shift_time_start.MinimumWidth = 8;
+            this.shift_time_start.Name = "shift_time_start";
+            this.shift_time_start.Width = 150;
+            // 
+            // shift_time_end
+            // 
+            this.shift_time_end.DataPropertyName = "shift_time_end";
+            this.shift_time_end.HeaderText = "Shift end";
+            this.shift_time_end.MinimumWidth = 8;
+            this.shift_time_end.Name = "shift_time_end";
+            this.shift_time_end.Width = 150;
+            // 
+            // shift_date
+            // 
+            this.shift_date.DataPropertyName = "shift_date";
+            this.shift_date.HeaderText = "Shift date";
+            this.shift_date.MinimumWidth = 8;
+            this.shift_date.Name = "shift_date";
+            this.shift_date.Width = 150;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.DataSource = this.rolesBindingSource;
+            this.dataGridView4.Location = new System.Drawing.Point(0, 35);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowHeadersWidth = 62;
+            this.dataGridView4.RowTemplate.Height = 28;
+            this.dataGridView4.Size = new System.Drawing.Size(352, 125);
+            this.dataGridView4.TabIndex = 35;
             // 
             // EmployeeDash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 625);
+            this.ClientSize = new System.Drawing.Size(1077, 776);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.btnAdmin);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnChatbot);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
@@ -558,21 +635,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).EndInit();
             this.groupboxRequests.ResumeLayout(false);
             this.groupboxRequests.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataLeaveReqDASH)).EndInit();
             this.groupBreakdown.ResumeLayout(false);
             this.groupBreakdown.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.analyticsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet8)).EndInit();
             this.groupAvailableNeed.ResumeLayout(false);
             this.groupAvailableNeed.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.analyticsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shiftsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -600,11 +684,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAdmin;
         private LNBrootDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataLeaveReqDASH;
         private TestDataSet testDataSet;
         private System.Windows.Forms.BindingSource leaveRequestsBindingSource;
         private TestDataSetTableAdapters.LeaveRequestsTableAdapter leaveRequestsTableAdapter;
@@ -621,16 +703,32 @@
         private TestDataSet6 testDataSet6;
         private System.Windows.Forms.BindingSource employeesBindingSource1;
         private TestDataSet6TableAdapters.EmployeesTableAdapter employeesTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pickup_status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private TestDataSet8 testDataSet8;
         private System.Windows.Forms.BindingSource analyticsBindingSource;
         private TestDataSet8TableAdapters.AnalyticsTableAdapter analyticsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employee_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reason;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enddateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reasonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private TestDataSet11 testDataSet11;
+        private System.Windows.Forms.BindingSource shiftsBindingSource1;
+        private TestDataSet11TableAdapters.ShiftsTableAdapter shiftsTableAdapter1;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private TestDataSet13 testDataSet13;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private TestDataSet13TableAdapters.RolesTableAdapter rolesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shift_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn created_at;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updated_at;
+        private System.Windows.Forms.DataGridViewTextBoxColumn role_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shift_time_start;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shift_time_end;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shift_date;
+        private System.Windows.Forms.DataGridView dataGridView4;
     }
 }
 

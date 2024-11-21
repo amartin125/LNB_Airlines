@@ -21,7 +21,7 @@ namespace LNB_Airlines
 
             // Determine selected role
             string userSelectedRole = rdEmployee.Checked ? "Employee" : "Admin";
-            MessageBox.Show($"Selected Role: {userSelectedRole}");
+            //MessageBox.Show($"Selected Role: {userSelectedRole}");
 
             try
             {
@@ -29,7 +29,7 @@ namespace LNB_Airlines
                 string username = txtUsername.Text;
                 string password = txtPassword.Text;
                 int employeeId = DatabaseConnection.ValidateUser(username, password, userSelectedRole);
-                MessageBox.Show($"Employee ID: {employeeId}");
+                //MessageBox.Show($"Employee ID: {employeeId}");
 
                 if (employeeId != -1)
                 {

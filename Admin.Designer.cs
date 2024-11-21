@@ -76,6 +76,8 @@
             this.testDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shiftsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shiftsTableAdapter = new LNB_Airlines.TestDataSet2TableAdapters.ShiftsTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataLeaveReq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leaveRequestsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet3)).BeginInit();
@@ -98,10 +100,9 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Red;
-            this.btnExit.Location = new System.Drawing.Point(1267, 765);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Location = new System.Drawing.Point(950, 612);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(117, 69);
+            this.btnExit.Size = new System.Drawing.Size(88, 55);
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -109,10 +110,9 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(1139, 469);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Location = new System.Drawing.Point(854, 375);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(132, 144);
+            this.btnClear.Size = new System.Drawing.Size(99, 115);
             this.btnClear.TabIndex = 11;
             this.btnClear.Text = "clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -128,10 +128,9 @@
             // 
             this.btnShiftApprove.BackColor = System.Drawing.Color.LimeGreen;
             this.btnShiftApprove.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnShiftApprove.Location = new System.Drawing.Point(16, 740);
-            this.btnShiftApprove.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShiftApprove.Location = new System.Drawing.Point(12, 592);
             this.btnShiftApprove.Name = "btnShiftApprove";
-            this.btnShiftApprove.Size = new System.Drawing.Size(117, 44);
+            this.btnShiftApprove.Size = new System.Drawing.Size(88, 35);
             this.btnShiftApprove.TabIndex = 13;
             this.btnShiftApprove.Text = "Approve";
             this.btnShiftApprove.UseVisualStyleBackColor = false;
@@ -140,10 +139,9 @@
             // btnLeave
             // 
             this.btnLeave.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnLeave.Location = new System.Drawing.Point(16, 196);
-            this.btnLeave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLeave.Location = new System.Drawing.Point(12, 157);
             this.btnLeave.Name = "btnLeave";
-            this.btnLeave.Size = new System.Drawing.Size(235, 60);
+            this.btnLeave.Size = new System.Drawing.Size(176, 48);
             this.btnLeave.TabIndex = 12;
             this.btnLeave.Text = "Leave Requests";
             this.btnLeave.UseVisualStyleBackColor = true;
@@ -156,12 +154,11 @@
             this.dataLeaveReq.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.status,
             this.reason});
-            this.dataLeaveReq.Location = new System.Drawing.Point(13, 362);
-            this.dataLeaveReq.Margin = new System.Windows.Forms.Padding(4);
+            this.dataLeaveReq.Location = new System.Drawing.Point(10, 290);
             this.dataLeaveReq.Name = "dataLeaveReq";
             this.dataLeaveReq.RowHeadersWidth = 62;
             this.dataLeaveReq.RowTemplate.Height = 28;
-            this.dataLeaveReq.Size = new System.Drawing.Size(931, 365);
+            this.dataLeaveReq.Size = new System.Drawing.Size(698, 292);
             this.dataLeaveReq.TabIndex = 12;
             this.dataLeaveReq.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -211,11 +208,10 @@
             this.txtReason.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtReason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReason.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReason.Location = new System.Drawing.Point(269, 740);
-            this.txtReason.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReason.Location = new System.Drawing.Point(202, 592);
             this.txtReason.Multiline = true;
             this.txtReason.Name = "txtReason";
-            this.txtReason.Size = new System.Drawing.Size(677, 44);
+            this.txtReason.Size = new System.Drawing.Size(508, 36);
             this.txtReason.TabIndex = 9;
             this.txtReason.Text = "Reason...";
             this.txtReason.TextChanged += new System.EventHandler(this.txtReason_TextChanged);
@@ -224,10 +220,9 @@
             // 
             this.button4.BackColor = System.Drawing.Color.OrangeRed;
             this.button4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button4.Location = new System.Drawing.Point(141, 740);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(106, 592);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(117, 44);
+            this.button4.Size = new System.Drawing.Size(88, 35);
             this.button4.TabIndex = 10;
             this.button4.Text = "Decline";
             this.button4.UseVisualStyleBackColor = false;
@@ -237,21 +232,19 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 38);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(2, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(321, 63);
+            this.label3.Size = new System.Drawing.Size(237, 46);
             this.label3.TabIndex = 20;
             this.label3.Text = "Admin Page";
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(16, 118);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Location = new System.Drawing.Point(12, 94);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(1319, 52);
+            this.txtSearch.Size = new System.Drawing.Size(990, 42);
             this.txtSearch.TabIndex = 21;
             this.txtSearch.Text = "Search....";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
@@ -259,10 +252,9 @@
             // btnPickups
             // 
             this.btnPickups.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnPickups.Location = new System.Drawing.Point(259, 196);
-            this.btnPickups.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPickups.Location = new System.Drawing.Point(194, 157);
             this.btnPickups.Name = "btnPickups";
-            this.btnPickups.Size = new System.Drawing.Size(235, 60);
+            this.btnPickups.Size = new System.Drawing.Size(176, 48);
             this.btnPickups.TabIndex = 22;
             this.btnPickups.Text = "Shift Pickups";
             this.btnPickups.UseVisualStyleBackColor = true;
@@ -271,10 +263,9 @@
             // btnVacant
             // 
             this.btnVacant.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnVacant.Location = new System.Drawing.Point(499, 196);
-            this.btnVacant.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVacant.Location = new System.Drawing.Point(374, 157);
             this.btnVacant.Name = "btnVacant";
-            this.btnVacant.Size = new System.Drawing.Size(235, 60);
+            this.btnVacant.Size = new System.Drawing.Size(176, 48);
             this.btnVacant.TabIndex = 23;
             this.btnVacant.Text = "Vacant Shifts";
             this.btnVacant.UseVisualStyleBackColor = true;
@@ -282,10 +273,9 @@
             // 
             // btnMain
             // 
-            this.btnMain.Location = new System.Drawing.Point(1139, 362);
-            this.btnMain.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMain.Location = new System.Drawing.Point(854, 290);
             this.btnMain.Name = "btnMain";
-            this.btnMain.Size = new System.Drawing.Size(132, 98);
+            this.btnMain.Size = new System.Drawing.Size(99, 78);
             this.btnMain.TabIndex = 24;
             this.btnMain.Text = "Main";
             this.btnMain.UseVisualStyleBackColor = true;
@@ -296,11 +286,9 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.Highlight;
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(3, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1613, 31);
+            this.groupBox1.Size = new System.Drawing.Size(1210, 25);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LNB ";
@@ -310,10 +298,9 @@
             // 
             this.lblShiftReq.AutoSize = true;
             this.lblShiftReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShiftReq.Location = new System.Drawing.Point(320, 285);
-            this.lblShiftReq.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShiftReq.Location = new System.Drawing.Point(240, 228);
             this.lblShiftReq.Name = "lblShiftReq";
-            this.lblShiftReq.Size = new System.Drawing.Size(266, 44);
+            this.lblShiftReq.Size = new System.Drawing.Size(199, 32);
             this.lblShiftReq.TabIndex = 25;
             this.lblShiftReq.Text = "Shift Requests";
             // 
@@ -321,10 +308,9 @@
             // 
             this.lblLeave.AutoSize = true;
             this.lblLeave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLeave.Location = new System.Drawing.Point(8, 285);
-            this.lblLeave.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLeave.Location = new System.Drawing.Point(6, 228);
             this.lblLeave.Name = "lblLeave";
-            this.lblLeave.Size = new System.Drawing.Size(292, 44);
+            this.lblLeave.Size = new System.Drawing.Size(219, 32);
             this.lblLeave.TabIndex = 26;
             this.lblLeave.Text = "Leave Requests";
             // 
@@ -332,20 +318,18 @@
             // 
             this.LblVacant.AutoSize = true;
             this.LblVacant.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblVacant.Location = new System.Drawing.Point(628, 285);
-            this.LblVacant.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblVacant.Location = new System.Drawing.Point(471, 228);
             this.LblVacant.Name = "LblVacant";
-            this.LblVacant.Size = new System.Drawing.Size(243, 44);
+            this.LblVacant.Size = new System.Drawing.Size(182, 32);
             this.LblVacant.TabIndex = 27;
             this.LblVacant.Text = "Vacant Shifts";
             // 
             // PowerBIBTN
             // 
             this.PowerBIBTN.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.PowerBIBTN.Location = new System.Drawing.Point(740, 196);
-            this.PowerBIBTN.Margin = new System.Windows.Forms.Padding(4);
+            this.PowerBIBTN.Location = new System.Drawing.Point(555, 157);
             this.PowerBIBTN.Name = "PowerBIBTN";
-            this.PowerBIBTN.Size = new System.Drawing.Size(235, 60);
+            this.PowerBIBTN.Size = new System.Drawing.Size(176, 48);
             this.PowerBIBTN.TabIndex = 23;
             this.PowerBIBTN.Text = "Power BI";
             this.PowerBIBTN.UseVisualStyleBackColor = true;
@@ -378,12 +362,11 @@
             this.pickup_status,
             this.created_at,
             this.updated_at});
-            this.dataShiftPickups.Location = new System.Drawing.Point(13, 429);
-            this.dataShiftPickups.Margin = new System.Windows.Forms.Padding(4);
+            this.dataShiftPickups.Location = new System.Drawing.Point(10, 290);
             this.dataShiftPickups.Name = "dataShiftPickups";
             this.dataShiftPickups.RowHeadersWidth = 62;
             this.dataShiftPickups.RowTemplate.Height = 28;
-            this.dataShiftPickups.Size = new System.Drawing.Size(931, 365);
+            this.dataShiftPickups.Size = new System.Drawing.Size(698, 292);
             this.dataShiftPickups.TabIndex = 28;
             this.dataShiftPickups.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataShiftPick_CellContentClick);
             // 
@@ -445,12 +428,11 @@
             // 
             this.dataShifts.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataShifts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataShifts.Location = new System.Drawing.Point(13, 536);
-            this.dataShifts.Margin = new System.Windows.Forms.Padding(4);
+            this.dataShifts.Location = new System.Drawing.Point(10, 290);
             this.dataShifts.Name = "dataShifts";
             this.dataShifts.RowHeadersWidth = 62;
             this.dataShifts.RowTemplate.Height = 28;
-            this.dataShifts.Size = new System.Drawing.Size(931, 365);
+            this.dataShifts.Size = new System.Drawing.Size(698, 292);
             this.dataShifts.TabIndex = 29;
             // 
             // shiftPickupsBindingSource1
@@ -467,12 +449,11 @@
             // 
             this.dataPowerBI.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataPowerBI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataPowerBI.Location = new System.Drawing.Point(16, 616);
-            this.dataPowerBI.Margin = new System.Windows.Forms.Padding(4);
+            this.dataPowerBI.Location = new System.Drawing.Point(10, 290);
             this.dataPowerBI.Name = "dataPowerBI";
             this.dataPowerBI.RowHeadersWidth = 62;
             this.dataPowerBI.RowTemplate.Height = 28;
-            this.dataPowerBI.Size = new System.Drawing.Size(931, 365);
+            this.dataPowerBI.Size = new System.Drawing.Size(698, 292);
             this.dataPowerBI.TabIndex = 30;
             // 
             // shiftPickupsTableAdapter1
@@ -498,11 +479,33 @@
             // 
             this.shiftsTableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(854, 182);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 78);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "chatbot";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(876, 157);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 20);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Testing";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1405, 856);
+            this.ClientSize = new System.Drawing.Size(1054, 685);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataPowerBI);
             this.Controls.Add(this.dataShifts);
             this.Controls.Add(this.dataShiftPickups);
@@ -523,7 +526,6 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExit);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Admin";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Admin_Load);
@@ -598,5 +600,7 @@
         private TestDataSet2 testDataSet2;
         private System.Windows.Forms.BindingSource shiftsBindingSource;
         private TestDataSet2TableAdapters.ShiftsTableAdapter shiftsTableAdapter;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }

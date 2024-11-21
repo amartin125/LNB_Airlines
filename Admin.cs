@@ -25,6 +25,10 @@ namespace LNB_Airlines
             dataShiftPickups.Hide();
             dataPowerBI.Hide();
             dataShifts.Hide();
+
+            // Attach the CellClick event handlers
+            dataLeaveReq.CellClick += dataLeaveReq_CellClick;
+            dataShiftPickups.CellClick += dataShiftPick_CellClick;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -44,22 +48,43 @@ namespace LNB_Airlines
         private void RefreshLeaveRequests()
         {
             DataTable leaveRequests = DatabaseConnection.GetLeaveRequests();
-            this.dataLeaveReq.DataSource = leaveRequests;
+            dataLeaveReq.DataSource = leaveRequests;
+
+            // Debug: Print column names to verify if "leave_id" is correct
+            foreach (DataColumn column in leaveRequests.Columns)
+            {
+                Console.WriteLine("LeaveRequests Column: " + column.ColumnName);
+            }
+
+            // Optional: Customize column headers if necessary
+            dataLeaveReq.Columns["leave_id"].HeaderText = "Leave ID";
+            dataLeaveReq.Columns["employee_id"].HeaderText = "Employee ID";
+            dataLeaveReq.Columns["start_date"].HeaderText = "Start Date";
+            dataLeaveReq.Columns["end_date"].HeaderText = "End Date";
+            dataLeaveReq.Columns["reason"].HeaderText = "Reason";
+            dataLeaveReq.Columns["status"].HeaderText = "Status";
         }
 
         private void RefreshShifts()
         {
-                DataTable shifts = DatabaseConnection.GetShifts();
-                dataShifts.DataSource = shifts; // Set the DataSource to display shifts data
+            DataTable shifts = DatabaseConnection.GetShifts();
+            dataShifts.DataSource = shifts;
 
-                // Optional: Customize column headers or visibility
-                dataShifts.Columns["shift_id"].HeaderText = "Shift ID";
-                dataShifts.Columns["department"].HeaderText = "Department";
-                dataShifts.Columns["shift_date"].HeaderText = "Date";
-                dataShifts.Columns["shift_time_start"].HeaderText = "Start Time";
-                dataShifts.Columns["shift_time_end"].HeaderText = "End Time";
-                dataShifts.Columns["approval_status"].HeaderText = "Approval Status";
-            
+            // Debug: Print column names to verify if "shift_id" is correct
+            foreach (DataColumn column in shifts.Columns)
+            {
+                Console.WriteLine("Shifts Column: " + column.ColumnName);
+            }
+
+            // Optional: Customize column headers if necessary
+            dataShifts.Columns["shift_id"].HeaderText = "Shift ID";
+            dataShifts.Columns["department"].HeaderText = "Department";
+            dataShifts.Columns["shift_date"].HeaderText = "Date";
+            dataShifts.Columns["shift_time_start"].HeaderText = "Start Time";
+            dataShifts.Columns["shift_time_end"].HeaderText = "End Time";
+            dataShifts.Columns["required_staff"].HeaderText = "Required Staff";
+            dataShifts.Columns["available_slots"].HeaderText = "Available Slots";
+            dataShifts.Columns["approval_status"].HeaderText = "Approval Status";
         }
 
         // Event to handle selection of leave requests
@@ -68,9 +93,14 @@ namespace LNB_Airlines
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataLeaveReq.Rows[e.RowIndex];
+
+                // Debugging output
+                MessageBox.Show("Leave request selected");
+
+                // Make sure "leave_id" is the correct column name
                 selectedRequestId = Convert.ToInt32(row.Cells["leave_id"].Value);
                 txtReason.Text = row.Cells["reason"].Value.ToString();
-                activeRequestType = "leave"; // Set active type to "leave"
+                activeRequestType = "leave";
             }
         }
 
@@ -80,9 +110,14 @@ namespace LNB_Airlines
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataShiftPickups.Rows[e.RowIndex];
+
+                // Debugging output
+                MessageBox.Show("Shift pickup selected");
+
+                // Make sure "pickup_id" is the correct column name
                 selectedRequestId = Convert.ToInt32(row.Cells["pickup_id"].Value);
                 txtReason.Text = row.Cells["pickup_status"].Value.ToString();
-                activeRequestType = "shift_pickup"; // Set active type to "shift pickup"
+                activeRequestType = "shift";
             }
         }
 
@@ -92,22 +127,35 @@ namespace LNB_Airlines
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataShifts.Rows[e.RowIndex];
+
+                // Debugging output
+                MessageBox.Show("Shift selected");
+
+                // Make sure "shift_id" is the correct column name
                 selectedRequestId = Convert.ToInt32(row.Cells["shift_id"].Value);
                 txtReason.Text = row.Cells["approval_status"].Value.ToString();
-                activeRequestType = "shift"; // Set active type to "shift"
+                activeRequestType = "shift";
             }
         }
 
         private void RefreshShiftPickups()
         {
             DataTable shiftPickups = DatabaseConnection.GetShiftPickups();
-            dataShiftPickups.DataSource = shiftPickups; // Use dataShiftPickups for ShiftPickups data
+            dataShiftPickups.DataSource = shiftPickups;
 
-            // Customize column headers if needed
+            // Debug: Print column names to verify if "pickup_id" is correct
+            foreach (DataColumn column in shiftPickups.Columns)
+            {
+                Console.WriteLine("ShiftPickups Column: " + column.ColumnName);
+            }
+
+            // Optional: Customize column headers if necessary
             dataShiftPickups.Columns["pickup_id"].HeaderText = "Pickup ID";
             dataShiftPickups.Columns["employee_id"].HeaderText = "Employee ID";
             dataShiftPickups.Columns["shift_id"].HeaderText = "Shift ID";
             dataShiftPickups.Columns["pickup_status"].HeaderText = "Status";
+            dataShiftPickups.Columns["created_at"].HeaderText = "Created At";
+            dataShiftPickups.Columns["updated_at"].HeaderText = "Updated At";
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -146,7 +194,7 @@ namespace LNB_Airlines
 
         private void btnMain_Click(object sender, EventArgs e)
         {
-            int defaultUserId = 0; // Replace with an appropriate default user ID
+            int defaultUserId = 1; // Replace with an appropriate default user ID
             this.Hide();
             EmployeeDash emp = new EmployeeDash(defaultUserId);
             emp.Show();
@@ -160,7 +208,9 @@ namespace LNB_Airlines
         private void btnShiftApprove_Click(object sender, EventArgs e)
         {
             // Shift approve button click event
-            if(selectedRequestId > 0 && !string.IsNullOrWhiteSpace(txtReason.Text))
+            MessageBox.Show($"selectedRequestId: {selectedRequestId}, activeRequestType: {activeRequestType}, Reason: {txtReason.Text}");
+
+            if (selectedRequestId > 0 && !string.IsNullOrWhiteSpace(txtReason.Text))
             {
                 if (activeRequestType == "leave")
                 {
@@ -170,9 +220,9 @@ namespace LNB_Airlines
                 }
                 else if (activeRequestType == "shift")
                 {
-                    DatabaseConnection.UpdateShiftStatus(selectedRequestId, "approved", txtReason.Text);
+                    DatabaseConnection.UpdateShiftPickupStatus(selectedRequestId, "approved", txtReason.Text);
                     MessageBox.Show("Shift approved.");
-                    RefreshShifts();
+                    RefreshShiftPickups();
                 }
                 else
                 {
@@ -187,6 +237,9 @@ namespace LNB_Airlines
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //TESTING REASON BOX
+            MessageBox.Show($"selectedRequestId: {selectedRequestId}, activeRequestType: {activeRequestType}, Reason: {txtReason.Text}");
+
             // Deny button click event
             if (selectedRequestId > 0 && !string.IsNullOrWhiteSpace(txtReason.Text))
             {
@@ -198,9 +251,9 @@ namespace LNB_Airlines
                 }
                 else if (activeRequestType == "shift")
                 {
-                    DatabaseConnection.UpdateShiftStatus(selectedRequestId, "denied", txtReason.Text);
+                    DatabaseConnection.UpdateShiftPickupStatus(selectedRequestId, "denied", txtReason.Text);
                     MessageBox.Show("Shift denied.");
-                    RefreshShifts();
+                    RefreshShiftPickups();
                 }
                 else
                 {
@@ -220,7 +273,7 @@ namespace LNB_Airlines
 
         private void PowerBIBTN_Click(object sender, EventArgs e)
         {
-            string filePath = @"C:\Users\titan\Documents\TESTPOWERBI.pbix"; // Replace with the actual path to your Power BI file
+            string filePath = @"C:\Users\User\Desktop\School\Scrum\LNB_Airlines\LNBBI.pbix"; // Replace with the actual path to your Power BI file
 
             try
             {
@@ -290,6 +343,18 @@ namespace LNB_Airlines
         }
 
         private void dataShiftPick_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Chatbot chat = new Chatbot();
+            chat.Show();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
