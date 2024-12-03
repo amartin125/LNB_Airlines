@@ -124,17 +124,16 @@ namespace LNB_Airlines
                     Console.WriteLine("Shifts Column: " + column.ColumnName);
                 }
 
-                // Customize column headers
+                //// Customize column headers
 
-                    ShiftDG.Columns["shift_id"].HeaderText = "Shift ID";
-                    ShiftDG.Columns["department"].HeaderText = "Department";
-                    ShiftDG.Columns["shift_date"].HeaderText = "Date";
-                    ShiftDG .Columns["shift_time_start"].HeaderText = "Start Time";
-                    ShiftDG.Columns["shift_time_end"].HeaderText = "End Time";
-                    ShiftDG.Columns["required_staff"].HeaderText = "Required Staff";
-                    ShiftDG.Columns["available_slots"].HeaderText = "Available Slots";
-                    ShiftDG.Columns["approval_status"].HeaderText = "Approval Status";
-                    ShiftDG.Columns["shift_date"].DefaultCellStyle.Format = "yyyy-MM-dd";
+                //    ShiftDG.Columns["shift_id"].HeaderText = "Shift ID";
+                //    ShiftDG.Columns["department"].HeaderText = "Department";
+                //    ShiftDG.Columns["shift_date"].HeaderText = "Date";
+                //    ShiftDG .Columns["shift_time_start"].HeaderText = "Start Time";
+                //    ShiftDG.Columns["shift_time_end"].HeaderText = "End Time";
+                //    ShiftDG.Columns["required_staff"].HeaderText = "Required Staff";
+                //    ShiftDG.Columns["available_slots"].HeaderText = "Available Slots";
+                //    ShiftDG.Columns["approval_status"].HeaderText = "Approval Status";
 
             }
             catch (Exception ex)
@@ -154,13 +153,13 @@ namespace LNB_Airlines
 
                 // Customize column headers
                 
-                    ShiftPickupsDG.Columns["pickup_id"].HeaderText = "Pickup ID";
-                    ShiftPickupsDG.Columns["shift_id"].HeaderText = "Shift ID";
-                    ShiftPickupsDG.Columns["pickup_status"].HeaderText = "Status";
-                    ShiftPickupsDG.Columns["reason"].HeaderText = "Reason";
-                    ShiftPickupsDG.Columns["shift_date"].HeaderText = "Date";
-                    ShiftPickupsDG.Columns["shift_time_start"].HeaderText = "Start Time";
-                    ShiftPickupsDG.Columns["shift_time_end"].HeaderText = "End Time";
+                    //ShiftPickupsDG.Columns["pickup_id"].HeaderText = "Pickup ID";
+                    //ShiftPickupsDG.Columns["shift_id"].HeaderText = "Shift ID";
+                    //ShiftPickupsDG.Columns["pickup_status"].HeaderText = "Status";
+                    //ShiftPickupsDG.Columns["reason"].HeaderText = "Reason";
+                    //ShiftPickupsDG.Columns["shift_date"].HeaderText = "Date";
+                    //ShiftPickupsDG.Columns["shift_time_start"].HeaderText = "Start Time";
+                    //ShiftPickupsDG.Columns["shift_time_end"].HeaderText = "End Time";
                 
             }
             catch (Exception ex)
@@ -174,31 +173,17 @@ namespace LNB_Airlines
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                // Retrieve notifications for the logged-in employee
+                DataTable notifications = DatabaseConnection.GetEmployeeNotifications(_employeeId);
+                notificationsDG.DataSource = notifications;
+
+                // Customize column headers
+                if (notificationsDG.Columns.Count > 0)
                 {
-                    connection.Open();
-                    string query = @"
-                SELECT notification_id, message, is_read, created_at 
-                FROM Notifications 
-                WHERE employee_id = @EmployeeId";
-
-                    SqlCommand cmd = new SqlCommand(query, connection);
-                    cmd.Parameters.AddWithValue("@EmployeeId", _employeeId);
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable notifications = new DataTable();
-                    da.Fill(notifications);
-
-                    notificationsDG.DataSource = notifications;
-
-                    // Customize column headers
-                    if (notificationsDG.Columns.Count > 0)
-                    {
-                        notificationsDG.Columns["notification_id"].HeaderText = "Notification ID";
-                        notificationsDG.Columns["message"].HeaderText = "Message";
-                        notificationsDG.Columns["is_read"].HeaderText = "Read";
-                        notificationsDG.Columns["created_at"].HeaderText = "Date";
-                    }
+                    notificationsDG.Columns["notification_id"].HeaderText = "Notification ID";
+                    notificationsDG.Columns["message"].HeaderText = "Message";
+                    notificationsDG.Columns["is_read"].HeaderText = "Read";
+                    notificationsDG.Columns["created_at"].HeaderText = "Date";
                 }
             }
             catch (Exception ex)
@@ -206,6 +191,7 @@ namespace LNB_Airlines
                 MessageBox.Show($"Error loading notifications: {ex.Message}");
             }
         }
+
 
         private void LoadTimeOffRequests()
         {

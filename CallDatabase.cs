@@ -13,8 +13,7 @@ namespace LNB_Airlines
         {
             List<string> connectionStrings = new List<string>
             {
-                //jakes
-                "Server=(LocalDb)\\LNBroot;Database=LNBairlines;Integrated Security=True;",
+                
                 "Server=JAKESLAPTOP\\SQLEXPRESS01;Database=LNBroot;Integrated Security=True;"
             };
 
@@ -272,6 +271,31 @@ namespace LNB_Airlines
                 }
             }
         }
+        public static DataTable GetEmployeeNotifications(int employeeId)
+        {
+            DataTable notifications = new DataTable();
+
+            using (SqlConnection connection = ConnectToDatabase())
+            {
+                string query = @"
+            SELECT notification_id, message, is_read, created_at 
+            FROM Notifications 
+            WHERE employee_id = @EmployeeId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@EmployeeId", employeeId);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(notifications);
+                    }
+                }
+            }
+
+            return notifications;
+        }
+
         // Method to update shift status and reason
         public static void UpdateShiftStatus(int shiftId, string status, string reason)
         {
