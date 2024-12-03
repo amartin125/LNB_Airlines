@@ -17,7 +17,13 @@ namespace LNB_Airlines
     {
         private int selectedRequestId = -1;
         private string activeRequestType = ""; // Tracks whether the selected request is "leave" or "shift"
+        private int loggedInEmployeeId;
 
+        public Admin(int employeeId)
+        {
+            InitializeComponent();
+            loggedInEmployeeId = employeeId; // Store the logged-in employee's ID
+        }
         public Admin()
         {
             InitializeComponent();
@@ -172,9 +178,7 @@ namespace LNB_Airlines
 
         private void btnChatbot_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Chatbot emp = new Chatbot();
-            emp.Show();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -348,10 +352,8 @@ namespace LNB_Airlines
         }
 
         private void button1_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            Chatbot chat = new Chatbot();
-            chat.Show();
+        {  
+                
         }
 
         private void label1_Click_1(object sender, EventArgs e)

@@ -63,7 +63,6 @@
             this.rtbChatHistory.Size = new System.Drawing.Size(483, 300);
             this.rtbChatHistory.TabIndex = 2;
             this.rtbChatHistory.Text = "";
-            this.rtbChatHistory.TextChanged += new System.EventHandler(this.rtbChatHistory_TextChanged);
             // 
             // label1
             // 
@@ -102,7 +101,6 @@
             this.Controls.Add(this.txtUserInput);
             this.Name = "Chatbot";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

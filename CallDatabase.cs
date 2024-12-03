@@ -12,11 +12,10 @@ namespace LNB_Airlines
         public static SqlConnection ConnectToDatabase()
         {
             List<string> connectionStrings = new List<string>
-            {//Andrews
-                "Server=DESKTOP-VEH3C8M\\SQLEXPRESS01;Database=Test;Integrated Security=True;",
+            {
                 //jakes
-                "Server=JAKESLAPTOP\\SQLEXPRESS01;Database=LNBroot;Integrated Security=True;",
                 "Server=(LocalDb)\\LNBroot;Database=LNBairlines;Integrated Security=True;",
+                "Server=JAKESLAPTOP\\SQLEXPRESS01;Database=LNBroot;Integrated Security=True;"
             };
 
             SqlConnection connection = null;
@@ -153,6 +152,30 @@ namespace LNB_Airlines
             }
             return shiftPickups;
         }
+        public static DataTable GetEmployeeShiftPickups(int employeeId)
+        {
+            DataTable shiftPickups = new DataTable();
+            using (SqlConnection connection = ConnectToDatabase())
+            {
+                string query = @"
+        SELECT sp.pickup_id, sp.shift_id, sp.pickup_status, sp.reason, 
+               s.shift_date, s.shift_time_start, s.shift_time_end
+        FROM ShiftPickups sp
+        JOIN Shifts s ON sp.shift_id = s.shift_id
+        WHERE sp.employee_id = @EmployeeId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@EmployeeId", employeeId);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(shiftPickups);
+                    }
+                }
+            }
+            return shiftPickups;
+        }
 
         // Method to retrieve all shifts
         public static DataTable GetShifts()
@@ -171,6 +194,7 @@ namespace LNB_Airlines
             }
             return shifts;
         }
+       
 
         // Method to update shift pickup status and reason
         public static void UpdateShiftPickupStatus(int pickupId, string status, string reason)

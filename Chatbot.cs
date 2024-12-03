@@ -1,38 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System;
-using System.Text;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
-
-
-
 
 namespace LNB_Airlines
 {
-        public partial class Chatbot : Form
-        {
-            // List to hold available shifts for LNB Airlines
-        private List<Shift> availableShifts = new List<Shift>
-        {
-            new Shift("Pilot", DateTime.Now.AddDays(1), "09:00 AM"),
-            new Shift("Flight Attendant", DateTime.Now.AddDays(1), "09:00 AM"),
-            new Shift("Ground Crew", DateTime.Now.AddDays(2), "01:00 PM"),
-        };
-
-        public Chatbot()
+    public partial class Chatbot : Form
+    {
+        private int employeeId;
+        private EmployeeDash employeeDash;
+        public Chatbot(int loggedInEmployeeId, EmployeeDash empDash)
         {
             InitializeComponent();
-            rtbChatHistory.Text = "He welcome to LNB's chatbot how can I help you today?";
-            rtbChatHistory.Text = "You can say things like: ";
-
+            employeeId = loggedInEmployeeId;
+            employeeDash = empDash; // Store reference to EmployeeDash
+            rtbChatHistory.AppendText("Bot: Hello! You can ask me about your shifts, request time off, or just chat.\n");
         }
 
         // Event handler for sending a message
@@ -42,296 +28,205 @@ namespace LNB_Airlines
             if (!string.IsNullOrEmpty(userInput))
             {
                 rtbChatHistory.AppendText($"You: {userInput}\n");
-                string botResponse = GetChatbotResponse(userInput); // Call it synchronously
+                string botResponse = GetChatbotResponse(userInput);
                 rtbChatHistory.AppendText($"Bot: {botResponse}\n");
                 txtUserInput.Clear();
             }
         }
-        // Simulates a typing delay for the bot
-        private async Task<string> SimulateTyping(string response)
-        {
-            await Task.Delay(1000); // 1-second delay
-            return response;
-        }
-
-        // Method to return chatbot response
-        // Method to return chatbot response
-        private string GetChatbotResponse(string userInput)
-        {
-            userInput = userInput.ToLower(); // Simplify input processing
-
-            if (userInput.Contains("pick up"))
-            {
-                return PickUpShift(userInput);
-            }
-            else if (userInput.Contains("drop"))
-            {
-                return DropShift(userInput);
-            }
-            else if (userInput.Contains("view shifts"))
-            {
-                return ListAvailableShifts();
-            }
-            else if (userInput.Contains("hello"))
-            {
-                return "Hello! How can I assist you with your shifts at LNB Airlines today?";
-            }
-            else if (userInput.Contains("how are you"))
-            {
-                return "I'm just a chatbot, but I'm ready to assist you with anything you need!";
-            }
-            else if (userInput.Contains("thank you"))
-            {
-                return "You're welcome! Let me know if there's anything else I can help with.";
-            }
-            else if (userInput.Contains("fun fact"))
-            {
-                return "Did you know? The average airplane flies at an altitude of 35,000 feet!";
-            }
-            else
-            {
-                return "I'm sorry, I didn't understand that. Try asking about picking up, dropping, or viewing available shifts.";
-            }
-        }
-
-        // Method to handle picking up a shift
-        private string PickUpShift(string userInput)
-        {
-            string[] keywords = userInput.Split(' ');
-            string department = keywords.FirstOrDefault(word => word.Equals("pilot", StringComparison.OrdinalIgnoreCase) || word.Equals("crew", StringComparison.OrdinalIgnoreCase));
-            DateTime shiftDate;
-
-            if (department == null || !DateTime.TryParse(keywords.Last(), out shiftDate))
-                return "Invalid input. Please specify a valid department and shift date.";
-
-            using (SqlConnection connection = new SqlConnection(ConnectToDatabase))
-            {
-                connection.Open();
-
-                string checkQuery = "SELECT shift_id, available_slots FROM Shifts " +
-                                    "WHERE department = @Department AND shift_date = @ShiftDate AND available_slots > 0";
-
-                using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
-                {
-                    checkCommand.Parameters.AddWithValue("@Department", department);
-                    checkCommand.Parameters.AddWithValue("@ShiftDate", shiftDate);
-
-                    using (SqlDataReader reader = checkCommand.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            int shiftId = Convert.ToInt32(reader["shift_id"]);
-                            int availableSlots = Convert.ToInt32(reader["available_slots"]);
-
-                            reader.Close();
-
-                            string updateQuery = "UPDATE Shifts SET available_slots = available_slots - 1 WHERE shift_id = @ShiftId";
-                            using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
-                            {
-                                updateCommand.Parameters.AddWithValue("@ShiftId", shiftId);
-                                updateCommand.ExecuteNonQuery();
-                            }
-
-                            return $"You have successfully picked up the {department} shift on {shiftDate.ToShortDateString()}.";
-                        }
-                        else
-                        {
-                            return "No available slots for the specified shift.";
-                        }
-                    }
-                }
-            }
-        }
-
-        // Method to handle dropping a shift
         private string DropShift(string userInput)
         {
-            foreach (var shift in availableShifts)
+            // Implement logic for dropping a shift or return a placeholder response
+            return "Feature to drop shifts is currently under development.";
+        }
+
+        private string GetChatbotResponse(string userInput)
+        {
+            userInput = userInput.ToLower();
+
+            if (userInput.Contains("pick up"))
+                return PickUpShift(userInput);
+            if (userInput.Contains("drop"))
+                return DropShift(userInput);
+            if (userInput.Contains("view shifts"))
+                return ListAvailableShifts();
+            if (userInput.Contains("request time off"))
+                return RequestTimeOff(userInput);
+            if (userInput.Contains("notifications"))
+                return GetNotifications();
+
+            return "I'm sorry, I didn't understand that. Try asking about shifts, leave requests, or notifications.";
+        }
+
+        private List<Shift> GetAvailableShifts()
+        {
+            List<Shift> shifts = new List<Shift>();
+            try
             {
-                if (userInput.Contains(shift.Role.ToLower()) && userInput.Contains(shift.Date.ToShortDateString()))
+                using (SqlConnection connection = DatabaseConnection.ConnectToDatabase())
                 {
-                    if (!shift.IsAvailable)
+                    string query = "SELECT department, shift_date, shift_time_start FROM Shifts WHERE available_slots > 0";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        shift.IsAvailable = true;
-                        return $"You have successfully dropped the {shift.Role} shift on {shift.Date.ToShortDateString()} at {shift.Time}.";
-                    }
-                    else
-                    {
-                        return $"You don't have the {shift.Role} shift on {shift.Date.ToShortDateString()} to drop.";
+                        while (reader.Read())
+                        {
+                            string department = reader["department"].ToString();
+                            DateTime date = Convert.ToDateTime(reader["shift_date"]);
+                            string time = reader["shift_time_start"].ToString();
+                            shifts.Add(new Shift(department, date, time));
+                        }
                     }
                 }
             }
-            return "Sorry, the shift you are trying to drop is not found.";
+            catch (Exception ex)
+            {
+                rtbChatHistory.AppendText($"Bot: Error fetching shifts: {ex.Message}\n");
+            }
+            return shifts;
         }
 
-        // Method to list all available shifts
         private string ListAvailableShifts()
         {
-            StringBuilder shiftList = new StringBuilder();
-            foreach (var shift in availableShifts)
+            List<Shift> shifts = GetAvailableShifts();
+            if (shifts.Count == 0) return "No shifts are currently available.";
+            StringBuilder shiftList = new StringBuilder("Available shifts:\n");
+            foreach (var shift in shifts) shiftList.AppendLine(shift.ToString());
+            return shiftList.ToString();
+        }
+
+        private string PickUpShift(string userInput)
+        {
+            // Simplify parsing or validate userInput if needed.
+            try
             {
-                if (shift.IsAvailable)
+                using (SqlConnection connection = DatabaseConnection.ConnectToDatabase())
                 {
-                    shiftList.AppendLine(shift.ToString());
+                    string query = "SELECT shift_id, available_slots FROM Shifts WHERE available_slots > 0";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Add parameters if needed based on userInput parsing.
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int shiftId = Convert.ToInt32(reader["shift_id"]);
+                                reader.Close();
+
+                                string updateQuery = "UPDATE Shifts SET available_slots = available_slots - 1 WHERE shift_id = @ShiftId";
+                                using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
+                                {
+                                    updateCommand.Parameters.AddWithValue("@ShiftId", shiftId);
+                                    updateCommand.ExecuteNonQuery();
+                                }
+
+                                string insertQuery = "INSERT INTO ShiftPickups (shift_id, employee_id, pickup_status) VALUES (@ShiftId, @EmployeeId, 'pending')";
+                                using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
+                                {
+                                    insertCommand.Parameters.AddWithValue("@ShiftId", shiftId);
+                                    insertCommand.Parameters.AddWithValue("@EmployeeId", employeeId);
+                                    insertCommand.ExecuteNonQuery();
+                                }
+
+                                return "You have successfully picked up a shift.";
+                            }
+                        }
+                    }
                 }
             }
-            return shiftList.Length > 0 ? shiftList.ToString() : "No shifts are currently available.";
+            catch (Exception ex)
+            {
+                return $"Error: {ex.Message}";
+            }
+            return "No shifts are available.";
         }
-        // Method to request time off
+
         private string RequestTimeOff(string userInput)
         {
-            string[] keywords = userInput.Split(' ');
-            DateTime startDate, endDate;
-            string reason = string.Join(" ", keywords.Skip(3));
+            // Parse userInput for startDate, endDate, and reason.
+            DateTime startDate = DateTime.Now; // Replace with parsed input.
+            DateTime endDate = DateTime.Now; // Replace with parsed input.
+            string reason = "Personal"; // Replace with parsed input.
 
-            if (!DateTime.TryParse(keywords[1], out startDate) || !DateTime.TryParse(keywords[2], out endDate))
-                return "Invalid dates. Please specify valid start and end dates.";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
-
-                string insertQuery = "INSERT INTO LeaveRequests (employee_id, start_date, end_date, reason) VALUES (@EmployeeId, @StartDate, @EndDate, @Reason)";
-                using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
+                using (SqlConnection connection = DatabaseConnection.ConnectToDatabase())
                 {
-                    insertCommand.Parameters.AddWithValue("@EmployeeId", 7); // Replace with logged-in employee ID
-                    insertCommand.Parameters.AddWithValue("@StartDate", startDate);
-                    insertCommand.Parameters.AddWithValue("@EndDate", endDate);
-                    insertCommand.Parameters.AddWithValue("@Reason", reason);
-
-                    insertCommand.ExecuteNonQuery();
+                    string insertQuery = "INSERT INTO LeaveRequests (employee_id, start_date, end_date, reason, status) VALUES (@EmployeeId, @StartDate, @EndDate, @Reason, 'pending')";
+                    using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@EmployeeId", employeeId);
+                        command.Parameters.AddWithValue("@StartDate", startDate);
+                        command.Parameters.AddWithValue("@EndDate", endDate);
+                        command.Parameters.AddWithValue("@Reason", reason);
+                        command.ExecuteNonQuery();
+                    }
                 }
+                return $"Your time-off request from {startDate.ToShortDateString()} to {endDate.ToShortDateString()} has been submitted.";
             }
-
-            return $"Your time-off request from {startDate.ToShortDateString()} to {endDate.ToShortDateString()} has been submitted.";
+            catch (Exception ex)
+            {
+                return $"Error: {ex.Message}";
+            }
         }
 
         private string GetNotifications()
         {
             StringBuilder notifications = new StringBuilder();
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
-                string query = "SELECT message, is_read FROM Notifications WHERE employee_id = @EmployeeId";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlConnection connection = DatabaseConnection.ConnectToDatabase())
                 {
-                    command.Parameters.AddWithValue("@EmployeeId", 7); // Replace with logged-in employee ID
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    string query = "SELECT message, is_read FROM Notifications WHERE employee_id = @EmployeeId";
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        command.Parameters.AddWithValue("@EmployeeId", employeeId);
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            string message = reader["message"].ToString();
-                            bool isRead = Convert.ToBoolean(reader["is_read"]);
-                            notifications.AppendLine($"{message} (Read: {isRead})");
+                            while (reader.Read())
+                            {
+                                string message = reader["message"].ToString();
+                                bool isRead = Convert.ToBoolean(reader["is_read"]);
+                                notifications.AppendLine($"{message} (Read: {isRead})");
+                            }
                         }
                     }
                 }
             }
-
+            catch (Exception ex)
+            {
+                return $"Error fetching notifications: {ex.Message}";
+            }
             return notifications.Length > 0 ? notifications.ToString() : "No notifications.";
-        }
-
-        // Method to search for shifts
-        private string SearchShifts(string userInput)
-        {
-            string[] words = userInput.Split(' ');
-            string role = words[Array.IndexOf(words, "for") + 1];
-            DateTime searchDate;
-
-            if (words.Contains("on") && DateTime.TryParse(words[Array.IndexOf(words, "on") + 1], out searchDate))
-            {
-                var shifts = availableShifts.Where(s => s.Role.Equals(role, StringComparison.OrdinalIgnoreCase) && s.Date.Date == searchDate.Date && s.IsAvailable);
-
-                if (shifts.Any())
-                {
-                    return $"Available {role} shifts on {searchDate.ToShortDateString()}:\n" + string.Join("\n", shifts.Select(s => s.ToString()));
-                }
-                else
-                {
-                    return $"No available {role} shifts on {searchDate.ToShortDateString()}.";
-                }
-            }
-            return "Please specify the role and date, e.g., 'search for pilot shifts on 11/22/2024'.";
-        }
-
-
-        // Method to view user's shifts
-        private string ViewUserShifts()
-        {
-            var userShifts = availableShifts.Where(s => !s.IsAvailable);
-
-            if (userShifts.Any())
-            {
-                return "Here are your current shifts:\n" + string.Join("\n", userShifts.Select(s => s.ToString()));
-            }
-            return "You have no shifts scheduled.";
-            return "You have no shifts scheduled.";
-        }
-
-        // Chatbot form load event
-       
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        // Chatbot form load event
-        private void Chatbot_Load(object sender, EventArgs e)
-        {
-            rtbChatHistory.AppendText("Bot: Hello! You can ask me about your shifts, request time off, or just chat.\n");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int defaultUserId = 1; // Replace with an appropriate default user ID
-            this.Hide();
-            EmployeeDash emp = new EmployeeDash(defaultUserId);
-            emp.Show();
+            this.Hide(); // Hide the Chatbot form
+            employeeDash.Show(); // Show the EmployeeDash form
         }
-
-        private void rtbChatHistory_TextChanged(object sender, EventArgs e)
+        private void Chatbot_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            employeeDash.Show(); // Ensure EmployeeDash is shown when Chatbot is closed
         }
     }
+    
 
-    // Shift class to represent each shift with role, date, and time
     public class Shift
+    {
+        public string Role { get; set; }
+        public DateTime Date { get; set; }
+        public string Time { get; set; }
+
+        public Shift(string role, DateTime date, string time)
         {
-            public string Role { get; set; }
-            public DateTime Date { get; set; }
-            public string Time { get; set; }
-            public bool IsAvailable { get; set; }
-
-        // Shift class to represent each shift with role, date, and time
-        public class shift
-        {
-            public string Role { get; set; }
-            public DateTime Date { get; set; }
-            public string Time { get; set; }
-            public bool IsAvailable { get; set; }
-
-            public shift(string role, DateTime date, string time)
-            {
-                Role = role;
-                Date = date;
-                Time = time;
-                IsAvailable = true;
-            }
-
-            public override string ToString()
-            {
-                return $"{Role} shift on {Date.ToShortDateString()} at {Time}";
-            }
+            Role = role;
+            Date = date;
+            Time = time;
         }
 
         public override string ToString()
-            {
-                return $"{Role} shift on {Date.ToShortDateString()} at {Time}";
-            }
+        {
+            return $"{Role} shift on {Date.ToShortDateString()} at {Time}";
         }
     }
+}
